@@ -307,6 +307,7 @@ namespace TheMist
             else if (tabControl1.SelectedIndex == 3)
             {
                 _editingUser = false;
+                dgvUsers.Rows.Clear();
                 try
                 {
                     using (var conn = ConnectionHelper.Instance.Connect())
