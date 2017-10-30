@@ -126,5 +126,10 @@ namespace TheMist
             Dispose();
         }
 
+        private void tbxPassword_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Return)
+                btnLogin_Click(null, e);
+        }
     }
 }

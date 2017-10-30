@@ -82,6 +82,7 @@
             this.tbxPassword.Size = new System.Drawing.Size(514, 33);
             this.tbxPassword.TabIndex = 3;
             this.tbxPassword.UseSystemPasswordChar = true;
+            this.tbxPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbxPassword_KeyDown);
             // 
             // btnLogin
             // 
