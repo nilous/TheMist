@@ -46,7 +46,11 @@ namespace TheMist
             {
                 tabControl1.TabPages.RemoveAt(2);
                 tabControl1.TabPages.RemoveAt(2);
+
+                dgvQueryResults.Columns[1].Visible = false;
             }
+
+            
 
             var type = IsAdmin ? "管理员" : "普通用户";
             toolStripStatusLabel1.Text = $"当前用户: {Login} [{type}]";
@@ -148,9 +152,9 @@ namespace TheMist
             if (cbxQueryItem1.Items.Count != 0)
                 cbxQueryItem1.SelectedIndex = 0;
 
-            dgvQueryResults.Columns[1].HeaderText = Item1;
-            dgvQueryResults.Columns[2].HeaderText = Item2;
-            dgvQueryResults.Columns[3].HeaderText = Item3;
+            dgvQueryResults.Columns[3].HeaderText = Item1;
+            dgvQueryResults.Columns[4].HeaderText = Item2;
+            dgvQueryResults.Columns[5].HeaderText = Item3;
         }
 
 
@@ -398,7 +402,7 @@ namespace TheMist
                     using (var cmd = new NpgsqlCommand())
                     {
                         cmd.Connection = conn;
-                        var cmdText = "select id, item1, item2, item3 from info where item1 = @x and created_at >= @b::timestamp and created_at <= @e::timestamp";
+                        var cmdText = "select info.id, item1, item2, item3, login, created_at from info, myuser where myuser.id = info.user_id and item1 = @x and created_at >= @b::timestamp and created_at <= @e::timestamp";
 
                         // 非管理员只能查询自己录入的数据
                         if (!IsAdmin)
@@ -429,9 +433,11 @@ namespace TheMist
                             {
                                 var index = dgvQueryResults.Rows.Add();
                                 dgvQueryResults.Rows[index].Cells[0].Value = Convert.ToInt32(reader[0]);
-                                dgvQueryResults.Rows[index].Cells[1].Value = reader[1].ToString();
-                                dgvQueryResults.Rows[index].Cells[2].Value = reader[2].ToString();
-                                dgvQueryResults.Rows[index].Cells[3].Value = reader[3].ToString();
+                                dgvQueryResults.Rows[index].Cells[3].Value = reader[1].ToString();
+                                dgvQueryResults.Rows[index].Cells[4].Value = reader[2].ToString();
+                                dgvQueryResults.Rows[index].Cells[5].Value = reader[3].ToString();
+                                dgvQueryResults.Rows[index].Cells[1].Value = reader[4].ToString();
+                                dgvQueryResults.Rows[index].Cells[2].Value = reader[5].ToString();
                             }
                         }
                     }
@@ -499,7 +505,7 @@ namespace TheMist
             {
                 using (var fs = new FileStream(sfd.FileName, FileMode.Create))
                 {
-                    var title = $"id, {Item1}, {Item2}, {Item3}" + Environment.NewLine;
+                    var title = $"id, 用户, 录入时间, {Item1}, {Item2}, {Item3}" + Environment.NewLine;
 
                     using (var w = new BinaryWriter(fs))
                     {
@@ -509,7 +515,12 @@ namespace TheMist
                         for (var i = 0; i < dgvQueryResults.Rows.Count; i++)
                         {
                             var row = dgvQueryResults.Rows[i];
-                            var s = $"{row.Cells[0].Value}, {row.Cells[1].Value}, {row.Cells[2].Value}, {row.Cells[3].Value}" + Environment.NewLine;
+                            var content = row.Cells[5].Value.ToString();
+                            var spliter = new string[1];
+                            spliter[0] = Environment.NewLine;
+                            var contents = content.Split(spliter, StringSplitOptions.None).ToList();
+                            var r = string.Join(" ", contents);
+                            var s = $"{row.Cells[0].Value}, {row.Cells[1].Value}, {row.Cells[2].Value}, {row.Cells[3].Value}, {row.Cells[4].Value}, {r}" + Environment.NewLine;
 
                             bytes = Encoding.GetEncoding("GBK").GetBytes(s);
                             w.Write(bytes, 0, bytes.Length);
