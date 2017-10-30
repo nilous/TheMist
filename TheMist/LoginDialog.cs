@@ -26,9 +26,9 @@ namespace TheMist
         {
             pnlSettings.Visible = show;
             if (show)
-                Height += pnlSettings.Height;
+                Height += (pnlSettings.Height + 30);
             else
-                Height -= pnlSettings.Height;
+                Height -= (pnlSettings.Height + 30);
         }
 
         private void LoginDialog_Load(object sender, EventArgs e)

@@ -49,46 +49,46 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(59, 50);
+            this.label1.Location = new System.Drawing.Point(72, 61);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(80, 18);
+            this.label1.Size = new System.Drawing.Size(98, 22);
             this.label1.TabIndex = 0;
             this.label1.Text = "登录账号";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(71, 106);
+            this.label2.Location = new System.Drawing.Point(87, 130);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(44, 18);
+            this.label2.Size = new System.Drawing.Size(54, 22);
             this.label2.TabIndex = 1;
             this.label2.Text = "密码";
             // 
             // tbxLogin
             // 
-            this.tbxLogin.Location = new System.Drawing.Point(194, 48);
+            this.tbxLogin.Location = new System.Drawing.Point(237, 59);
             this.tbxLogin.Margin = new System.Windows.Forms.Padding(2);
             this.tbxLogin.Name = "tbxLogin";
-            this.tbxLogin.Size = new System.Drawing.Size(421, 28);
+            this.tbxLogin.Size = new System.Drawing.Size(514, 33);
             this.tbxLogin.TabIndex = 2;
             // 
             // tbxPassword
             // 
-            this.tbxPassword.Location = new System.Drawing.Point(194, 104);
+            this.tbxPassword.Location = new System.Drawing.Point(237, 127);
             this.tbxPassword.Margin = new System.Windows.Forms.Padding(2);
             this.tbxPassword.Name = "tbxPassword";
-            this.tbxPassword.Size = new System.Drawing.Size(421, 28);
+            this.tbxPassword.Size = new System.Drawing.Size(514, 33);
             this.tbxPassword.TabIndex = 3;
             this.tbxPassword.UseSystemPasswordChar = true;
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(507, 160);
+            this.btnLogin.Location = new System.Drawing.Point(620, 196);
             this.btnLogin.Margin = new System.Windows.Forms.Padding(2);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(108, 44);
+            this.btnLogin.Size = new System.Drawing.Size(132, 54);
             this.btnLogin.TabIndex = 4;
             this.btnLogin.Text = "登录";
             this.btnLogin.UseVisualStyleBackColor = true;
@@ -96,10 +96,10 @@
             // 
             // btnSettings
             // 
-            this.btnSettings.Location = new System.Drawing.Point(375, 160);
+            this.btnSettings.Location = new System.Drawing.Point(458, 196);
             this.btnSettings.Margin = new System.Windows.Forms.Padding(2);
             this.btnSettings.Name = "btnSettings";
-            this.btnSettings.Size = new System.Drawing.Size(104, 44);
+            this.btnSettings.Size = new System.Drawing.Size(127, 54);
             this.btnSettings.TabIndex = 5;
             this.btnSettings.Text = "设置";
             this.btnSettings.UseVisualStyleBackColor = true;
@@ -115,90 +115,90 @@
             this.pnlSettings.Controls.Add(this.label4);
             this.pnlSettings.Controls.Add(this.tbxHost);
             this.pnlSettings.Controls.Add(this.label3);
-            this.pnlSettings.Location = new System.Drawing.Point(38, 236);
+            this.pnlSettings.Location = new System.Drawing.Point(46, 288);
             this.pnlSettings.Margin = new System.Windows.Forms.Padding(2);
             this.pnlSettings.Name = "pnlSettings";
-            this.pnlSettings.Size = new System.Drawing.Size(622, 253);
+            this.pnlSettings.Size = new System.Drawing.Size(760, 309);
             this.pnlSettings.TabIndex = 6;
             // 
             // tbxDatabase
             // 
-            this.tbxDatabase.Location = new System.Drawing.Point(149, 77);
+            this.tbxDatabase.Location = new System.Drawing.Point(182, 94);
             this.tbxDatabase.Margin = new System.Windows.Forms.Padding(2);
             this.tbxDatabase.Name = "tbxDatabase";
-            this.tbxDatabase.Size = new System.Drawing.Size(428, 28);
+            this.tbxDatabase.Size = new System.Drawing.Size(522, 33);
             this.tbxDatabase.TabIndex = 7;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(21, 80);
+            this.label6.Location = new System.Drawing.Point(26, 98);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(98, 18);
+            this.label6.Size = new System.Drawing.Size(120, 22);
             this.label6.TabIndex = 6;
             this.label6.Text = "数据库名称";
             // 
             // tbxDbPassword
             // 
-            this.tbxDbPassword.Location = new System.Drawing.Point(149, 195);
+            this.tbxDbPassword.Location = new System.Drawing.Point(182, 238);
             this.tbxDbPassword.Margin = new System.Windows.Forms.Padding(2);
             this.tbxDbPassword.Name = "tbxDbPassword";
-            this.tbxDbPassword.Size = new System.Drawing.Size(428, 28);
+            this.tbxDbPassword.Size = new System.Drawing.Size(522, 33);
             this.tbxDbPassword.TabIndex = 5;
             this.tbxDbPassword.UseSystemPasswordChar = true;
             // 
             // tbxDbUser
             // 
-            this.tbxDbUser.Location = new System.Drawing.Point(149, 137);
+            this.tbxDbUser.Location = new System.Drawing.Point(182, 167);
             this.tbxDbUser.Margin = new System.Windows.Forms.Padding(2);
             this.tbxDbUser.Name = "tbxDbUser";
-            this.tbxDbUser.Size = new System.Drawing.Size(428, 28);
+            this.tbxDbUser.Size = new System.Drawing.Size(522, 33);
             this.tbxDbUser.TabIndex = 4;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(21, 197);
+            this.label5.Location = new System.Drawing.Point(26, 241);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(98, 18);
+            this.label5.Size = new System.Drawing.Size(120, 22);
             this.label5.TabIndex = 3;
             this.label5.Text = "数据库密码";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(21, 140);
+            this.label4.Location = new System.Drawing.Point(26, 171);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(116, 18);
+            this.label4.Size = new System.Drawing.Size(142, 22);
             this.label4.TabIndex = 2;
             this.label4.Text = "数据库用户名";
             // 
             // tbxHost
             // 
-            this.tbxHost.Location = new System.Drawing.Point(149, 24);
+            this.tbxHost.Location = new System.Drawing.Point(182, 29);
             this.tbxHost.Margin = new System.Windows.Forms.Padding(2);
             this.tbxHost.Name = "tbxHost";
-            this.tbxHost.Size = new System.Drawing.Size(428, 28);
+            this.tbxHost.Size = new System.Drawing.Size(522, 33);
             this.tbxHost.TabIndex = 1;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(21, 26);
+            this.label3.Location = new System.Drawing.Point(26, 32);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(80, 18);
+            this.label3.Size = new System.Drawing.Size(98, 22);
             this.label3.TabIndex = 0;
             this.label3.Text = "服务器IP";
             // 
             // LoginDialog
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(703, 522);
+            this.ClientSize = new System.Drawing.Size(859, 638);
             this.Controls.Add(this.pnlSettings);
             this.Controls.Add(this.btnSettings);
             this.Controls.Add(this.btnLogin);
@@ -206,6 +206,7 @@
             this.Controls.Add(this.tbxLogin);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Font = new System.Drawing.Font("宋体", 11F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
