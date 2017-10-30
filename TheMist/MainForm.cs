@@ -399,6 +399,11 @@ namespace TheMist
                     {
                         cmd.Connection = conn;
                         var cmdText = "select id, item1, item2, item3 from info where item1 = @x and created_at >= @b::timestamp and created_at <= @e::timestamp";
+
+                        // 非管理员只能查询自己录入的数据
+                        if (!IsAdmin)
+                            cmdText += $" and user_id = {UserID} ";
+
                         if (cbxLimit.SelectedIndex != 3)
                         {
                             int limit = 10;
@@ -454,6 +459,9 @@ namespace TheMist
         private void button1_Click(object sender, EventArgs e)
         {
             if (dgvQueryResults.SelectedRows.Count == 0)
+                return;
+
+            if (MessageBox.Show("确认删除选中记录？", "删除记录", MessageBoxButtons.OKCancel) == DialogResult.Cancel)
                 return;
 
             //MessageBox.Show(dgvQueryResults.SelectedRows[0].Index.ToString());
