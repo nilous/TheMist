@@ -76,6 +76,8 @@
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -84,6 +86,7 @@
             this.groupBox1.SuspendLayout();
             this.tpUser.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsers)).BeginInit();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -110,7 +113,7 @@
             this.tabPage1.Controls.Add(this.lblItem1);
             this.tabPage1.Location = new System.Drawing.Point(4, 32);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(1290, 819);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "数据录入";
@@ -194,10 +197,10 @@
             this.tabPage2.Controls.Add(this.dtpEnd);
             this.tabPage2.Controls.Add(this.dtpBegin);
             this.tabPage2.Controls.Add(this.label5);
-            this.tabPage2.Location = new System.Drawing.Point(4, 34);
+            this.tabPage2.Location = new System.Drawing.Point(4, 32);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.tabPage2.Size = new System.Drawing.Size(1290, 817);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(1290, 819);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "数据查询";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -205,7 +208,7 @@
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(35, 739);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(136, 57);
             this.button1.TabIndex = 12;
@@ -223,7 +226,7 @@
             "1000",
             "不限"});
             this.cbxLimit.Location = new System.Drawing.Point(1061, 42);
-            this.cbxLimit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbxLimit.Margin = new System.Windows.Forms.Padding(4);
             this.cbxLimit.Name = "cbxLimit";
             this.cbxLimit.Size = new System.Drawing.Size(183, 30);
             this.cbxLimit.TabIndex = 11;
@@ -241,7 +244,7 @@
             // btnDelete
             // 
             this.btnDelete.Location = new System.Drawing.Point(201, 739);
-            this.btnDelete.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(4);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(136, 57);
             this.btnDelete.TabIndex = 9;
@@ -252,7 +255,7 @@
             // btnExport
             // 
             this.btnExport.Location = new System.Drawing.Point(1108, 739);
-            this.btnExport.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnExport.Margin = new System.Windows.Forms.Padding(4);
             this.btnExport.Name = "btnExport";
             this.btnExport.Size = new System.Drawing.Size(136, 57);
             this.btnExport.TabIndex = 8;
@@ -271,7 +274,7 @@
             this.Column4});
             this.dgvQueryResults.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvQueryResults.Location = new System.Drawing.Point(35, 207);
-            this.dgvQueryResults.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvQueryResults.Margin = new System.Windows.Forms.Padding(4);
             this.dgvQueryResults.Name = "dgvQueryResults";
             this.dgvQueryResults.RowHeadersVisible = false;
             this.dgvQueryResults.RowTemplate.Height = 30;
@@ -302,7 +305,7 @@
             // btnQuery
             // 
             this.btnQuery.Location = new System.Drawing.Point(1108, 114);
-            this.btnQuery.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnQuery.Margin = new System.Windows.Forms.Padding(4);
             this.btnQuery.Name = "btnQuery";
             this.btnQuery.Size = new System.Drawing.Size(136, 57);
             this.btnQuery.TabIndex = 6;
@@ -315,7 +318,7 @@
             this.cbxQueryItem1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxQueryItem1.FormattingEnabled = true;
             this.cbxQueryItem1.Location = new System.Drawing.Point(237, 127);
-            this.cbxQueryItem1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbxQueryItem1.Margin = new System.Windows.Forms.Padding(4);
             this.cbxQueryItem1.Name = "cbxQueryItem1";
             this.cbxQueryItem1.Size = new System.Drawing.Size(811, 30);
             this.cbxQueryItem1.TabIndex = 5;
@@ -343,7 +346,7 @@
             // dtpEnd
             // 
             this.dtpEnd.Location = new System.Drawing.Point(541, 38);
-            this.dtpEnd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtpEnd.Margin = new System.Windows.Forms.Padding(4);
             this.dtpEnd.Name = "dtpEnd";
             this.dtpEnd.Size = new System.Drawing.Size(243, 33);
             this.dtpEnd.TabIndex = 2;
@@ -351,7 +354,7 @@
             // dtpBegin
             // 
             this.dtpBegin.Location = new System.Drawing.Point(237, 38);
-            this.dtpBegin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtpBegin.Margin = new System.Windows.Forms.Padding(4);
             this.dtpBegin.Name = "dtpBegin";
             this.dtpBegin.Size = new System.Drawing.Size(243, 33);
             this.dtpBegin.TabIndex = 1;
@@ -372,9 +375,9 @@
             this.tpSys.Controls.Add(this.groupBox1);
             this.tpSys.Controls.Add(this.tbxSysName);
             this.tpSys.Controls.Add(this.label4);
-            this.tpSys.Location = new System.Drawing.Point(4, 34);
+            this.tpSys.Location = new System.Drawing.Point(4, 32);
             this.tpSys.Name = "tpSys";
-            this.tpSys.Size = new System.Drawing.Size(1290, 817);
+            this.tpSys.Size = new System.Drawing.Size(1290, 819);
             this.tpSys.TabIndex = 2;
             this.tpSys.Text = "系统设定";
             this.tpSys.UseVisualStyleBackColor = true;
@@ -429,7 +432,7 @@
             // tbxItem3Title
             // 
             this.tbxItem3Title.Location = new System.Drawing.Point(236, 302);
-            this.tbxItem3Title.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbxItem3Title.Margin = new System.Windows.Forms.Padding(4);
             this.tbxItem3Title.Name = "tbxItem3Title";
             this.tbxItem3Title.Size = new System.Drawing.Size(714, 33);
             this.tbxItem3Title.TabIndex = 5;
@@ -447,7 +450,7 @@
             // tbxItem2Title
             // 
             this.tbxItem2Title.Location = new System.Drawing.Point(236, 198);
-            this.tbxItem2Title.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbxItem2Title.Margin = new System.Windows.Forms.Padding(4);
             this.tbxItem2Title.Name = "tbxItem2Title";
             this.tbxItem2Title.Size = new System.Drawing.Size(714, 33);
             this.tbxItem2Title.TabIndex = 3;
@@ -465,7 +468,7 @@
             // tbxItem1Title
             // 
             this.tbxItem1Title.Location = new System.Drawing.Point(236, 102);
-            this.tbxItem1Title.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbxItem1Title.Margin = new System.Windows.Forms.Padding(4);
             this.tbxItem1Title.Name = "tbxItem1Title";
             this.tbxItem1Title.Size = new System.Drawing.Size(714, 33);
             this.tbxItem1Title.TabIndex = 1;
@@ -501,9 +504,9 @@
             this.tpUser.Controls.Add(this.button5);
             this.tpUser.Controls.Add(this.btnNewUser);
             this.tpUser.Controls.Add(this.dgvUsers);
-            this.tpUser.Location = new System.Drawing.Point(4, 34);
+            this.tpUser.Location = new System.Drawing.Point(4, 32);
             this.tpUser.Name = "tpUser";
-            this.tpUser.Size = new System.Drawing.Size(1290, 817);
+            this.tpUser.Size = new System.Drawing.Size(1290, 819);
             this.tpUser.TabIndex = 3;
             this.tpUser.Text = "用户管理";
             this.tpUser.UseVisualStyleBackColor = true;
@@ -571,11 +574,30 @@
             this.Column8.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.Column8.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
+            // statusStrip1
+            // 
+            this.statusStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel1});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 906);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(1382, 28);
+            this.statusStrip1.TabIndex = 1;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.Font = new System.Drawing.Font("宋体", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(241, 23);
+            this.toolStripStatusLabel1.Text = "toolStripStatusLabel1";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1382, 920);
+            this.ClientSize = new System.Drawing.Size(1382, 934);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.tabControl1);
             this.Font = new System.Drawing.Font("宋体", 11F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -596,7 +618,10 @@
             this.groupBox1.PerformLayout();
             this.tpUser.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsers)).EndInit();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -650,6 +675,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Column7;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Column8;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
     }
 }
 

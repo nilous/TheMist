@@ -91,7 +91,7 @@ namespace TheMist
                     using (var cmd = new NpgsqlCommand())
                     {
                         cmd.Connection = conn;
-                        cmd.CommandText = "select id, is_disabled, is_admin from myuser where login=@l and password=@p";
+                        cmd.CommandText = "select id, is_disabled, is_admin, login from myuser where login=@l and password=@p";
                         cmd.Parameters.AddWithValue("l", user);
                         cmd.Parameters.AddWithValue("p", password);
                         using (var reader = cmd.ExecuteReader())
@@ -111,6 +111,7 @@ namespace TheMist
 
                             _form.UserID = Convert.ToInt32(reader[0]);
                             _form.IsAdmin = Convert.ToBoolean(reader[2]);
+                            _form.Login = reader[3].ToString();
                         }
                     }
                 }

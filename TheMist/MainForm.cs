@@ -15,6 +15,7 @@ namespace TheMist
     public partial class MainForm : Form
     {
         public int UserID { get; set; }
+        public string Login { get; set; }
         public bool IsAdmin { get; set; } = false;
 
         public string SystemName { get; set; }
@@ -46,6 +47,9 @@ namespace TheMist
                 tabControl1.TabPages.RemoveAt(2);
                 tabControl1.TabPages.RemoveAt(2);
             }
+
+            var type = IsAdmin ? "管理员" : "普通用户";
+            toolStripStatusLabel1.Text = $"当前用户: {Login} [{type}]";
 
             using (var conn = ConnectionHelper.Instance.Connect())
             {
