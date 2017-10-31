@@ -12,6 +12,8 @@ namespace TheMist
 {
     public class ConnectionHelper
     {
+        private static string DatabaseConfigFile = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData)
+            + Path.DirectorySeparatorChar + "TheMist" + Path.DirectorySeparatorChar + "db.dat";
         public static ConnectionHelper Instance = new ConnectionHelper();
 
         public string Host { get; set; }
@@ -21,15 +23,16 @@ namespace TheMist
 
         public NpgsqlConnection Connect()
         {
-            var connStr = $"Host={Host};Username={User};Password={Password};Database={Database}";
+            var connStr = $"Host={Host};Username={User};Password={Password};Database={Database};Timeout=4";
             return new NpgsqlConnection(connStr);
         }
 
         public void LoadSettings()
         {
+            MessageBox.Show(DatabaseConfigFile);
             try
             {
-                using (var reader = File.OpenText("./db.dat"))
+                using (var reader = File.OpenText(DatabaseConfigFile))
                 {
                     var json = reader.ReadToEnd();
                     var obj = JsonConvert.DeserializeObject<ConnectionHelper>(json);
@@ -51,7 +54,11 @@ namespace TheMist
             var s = JsonConvert.SerializeObject(this);
             try
             {
-                using (var fs = new FileStream("./db.dat", FileMode.Create))
+                var dir = Path.GetDirectoryName(DatabaseConfigFile);
+                if (!Directory.Exists(dir))
+                    Directory.CreateDirectory(dir);
+
+                using (var fs = new FileStream(DatabaseConfigFile, FileMode.Create))
                 {
                     using (var w = new BinaryWriter(fs))
                     {

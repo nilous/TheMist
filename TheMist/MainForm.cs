@@ -149,8 +149,10 @@ namespace TheMist
 
             cbxQueryItem1.Items.Clear();
             cbxQueryItem1.Items.AddRange(Item1Opts.ToArray());
+            cbxQueryItem1.Items.Add("不限");
             if (cbxQueryItem1.Items.Count != 0)
                 cbxQueryItem1.SelectedIndex = 0;
+
 
             dgvQueryResults.Columns[3].HeaderText = Item1;
             dgvQueryResults.Columns[4].HeaderText = Item2;
@@ -402,7 +404,10 @@ namespace TheMist
                     using (var cmd = new NpgsqlCommand())
                     {
                         cmd.Connection = conn;
-                        var cmdText = "select info.id, item1, item2, item3, login, created_at from info, myuser where myuser.id = info.user_id and item1 = @x and created_at >= @b::timestamp and created_at <= @e::timestamp";
+                        var cmdText = "select info.id, item1, item2, item3, login, created_at from info, myuser where myuser.id = info.user_id and created_at >= @b::timestamp and created_at <= @e::timestamp";
+
+                        if (cbxQueryItem1.SelectedIndex != cbxQueryItem1.Items.Count - 1)
+                            cmdText += $" and item1 = @x";
 
                         // 非管理员只能查询自己录入的数据
                         if (!IsAdmin)
@@ -423,7 +428,8 @@ namespace TheMist
                         //MessageBox.Show(cmd.CommandText);
                         //MessageBox.Show(cbxQueryItem1.Text);
 
-                        cmd.Parameters.AddWithValue("x", cbxQueryItem1.Text);
+                        if (cbxQueryItem1.SelectedIndex != cbxQueryItem1.Items.Count - 1)
+                            cmd.Parameters.AddWithValue("x", cbxQueryItem1.Text);
                         cmd.Parameters.AddWithValue("b", dtpBegin.Value.ToString("yyyy-MM-dd 00:00:00"));
                         cmd.Parameters.AddWithValue("e", dtpEnd.Value.ToString("yyyy-MM-dd 23:59:59"));
 

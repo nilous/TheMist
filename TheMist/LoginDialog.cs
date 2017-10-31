@@ -116,9 +116,14 @@ namespace TheMist
                     }
                 }
             }
+            catch (NpgsqlException ex)
+            {
+                MessageBox.Show($"连接数据库失败: {ex.Message}");
+                return;
+            }
             catch (Exception ex)
             {
-                //MessageBox.Show($"：{ex.Message}");
+                MessageBox.Show($"登录时发生异常：{ex.Message}");
                 return;
             }
 
