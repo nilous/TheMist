@@ -514,6 +514,15 @@ namespace TheMist
             }
         }
 
+        private static string CellValueToString(string cellValue)
+        {
+            var spliter = new string[1];
+            spliter[0] = Environment.NewLine;
+            var contents = cellValue.Split(spliter, StringSplitOptions.None).ToList();
+            var r = string.Join(" ", contents);
+            return r;
+        }
+
         private void btnExport_Click(object sender, EventArgs e)
         {
             var sfd = new SaveFileDialog();
@@ -522,7 +531,7 @@ namespace TheMist
             {
                 using (var fs = new FileStream(sfd.FileName, FileMode.Create))
                 {
-                    var title = $"id, 用户, 录入时间, {Item1}, {Item2}, {Item3}" + Environment.NewLine;
+                    var title = $"id, 用户, 录入时间, {Item1}, {Item2}, {Item3}, {Item3}_2, {Item3}_3" + Environment.NewLine;
 
                     using (var w = new BinaryWriter(fs))
                     {
@@ -532,12 +541,18 @@ namespace TheMist
                         for (var i = 0; i < dgvQueryResults.Rows.Count; i++)
                         {
                             var row = dgvQueryResults.Rows[i];
+                            /*
                             var content = row.Cells[5].Value.ToString();
                             var spliter = new string[1];
                             spliter[0] = Environment.NewLine;
                             var contents = content.Split(spliter, StringSplitOptions.None).ToList();
                             var r = string.Join(" ", contents);
-                            var s = $"{row.Cells[0].Value}, {row.Cells[1].Value}, {row.Cells[2].Value}, {row.Cells[3].Value}, {row.Cells[4].Value}, {r}" + Environment.NewLine;
+                            */
+                            var i3 = CellValueToString(row.Cells[5].Value.ToString());
+                            var i3_2 = CellValueToString(row.Cells[6].Value.ToString());
+                            var i3_3 = CellValueToString(row.Cells[7].Value.ToString());
+
+                            var s = $"{row.Cells[0].Value}, {row.Cells[1].Value}, {row.Cells[2].Value}, {row.Cells[3].Value}, {row.Cells[4].Value}, {i3}, {i3_2}, {i3_3}" + Environment.NewLine;
 
                             bytes = Encoding.GetEncoding("GBK").GetBytes(s);
                             w.Write(bytes, 0, bytes.Length);

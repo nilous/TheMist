@@ -196,7 +196,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(35, 401);
+            this.button1.Location = new System.Drawing.Point(22, 424);
             this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(136, 42);
@@ -214,7 +214,7 @@
             "100",
             "1000",
             "不限"});
-            this.cbxLimit.Location = new System.Drawing.Point(640, 26);
+            this.cbxLimit.Location = new System.Drawing.Point(682, 26);
             this.cbxLimit.Margin = new System.Windows.Forms.Padding(4);
             this.cbxLimit.Name = "cbxLimit";
             this.cbxLimit.Size = new System.Drawing.Size(144, 26);
@@ -223,7 +223,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(534, 29);
+            this.label7.Location = new System.Drawing.Point(574, 29);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(85, 19);
@@ -232,7 +232,7 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(179, 401);
+            this.btnDelete.Location = new System.Drawing.Point(170, 424);
             this.btnDelete.Margin = new System.Windows.Forms.Padding(4);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(136, 42);
@@ -243,7 +243,7 @@
             // 
             // btnExport
             // 
-            this.btnExport.Location = new System.Drawing.Point(648, 401);
+            this.btnExport.Location = new System.Drawing.Point(690, 424);
             this.btnExport.Margin = new System.Windows.Forms.Padding(4);
             this.btnExport.Name = "btnExport";
             this.btnExport.Size = new System.Drawing.Size(136, 42);
@@ -266,18 +266,18 @@
             this.Column11,
             this.Column12});
             this.dgvQueryResults.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgvQueryResults.Location = new System.Drawing.Point(35, 135);
+            this.dgvQueryResults.Location = new System.Drawing.Point(22, 135);
             this.dgvQueryResults.Margin = new System.Windows.Forms.Padding(4);
             this.dgvQueryResults.Name = "dgvQueryResults";
             this.dgvQueryResults.RowHeadersVisible = false;
             this.dgvQueryResults.RowTemplate.Height = 30;
             this.dgvQueryResults.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvQueryResults.Size = new System.Drawing.Size(749, 249);
+            this.dgvQueryResults.Size = new System.Drawing.Size(804, 281);
             this.dgvQueryResults.TabIndex = 7;
             // 
             // btnQuery
             // 
-            this.btnQuery.Location = new System.Drawing.Point(648, 77);
+            this.btnQuery.Location = new System.Drawing.Point(690, 75);
             this.btnQuery.Margin = new System.Windows.Forms.Padding(4);
             this.btnQuery.Name = "btnQuery";
             this.btnQuery.Size = new System.Drawing.Size(136, 42);
@@ -290,16 +290,16 @@
             // 
             this.cbxQueryItem1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxQueryItem1.FormattingEnabled = true;
-            this.cbxQueryItem1.Location = new System.Drawing.Point(126, 84);
+            this.cbxQueryItem1.Location = new System.Drawing.Point(111, 84);
             this.cbxQueryItem1.Margin = new System.Windows.Forms.Padding(4);
             this.cbxQueryItem1.Name = "cbxQueryItem1";
-            this.cbxQueryItem1.Size = new System.Drawing.Size(493, 26);
+            this.cbxQueryItem1.Size = new System.Drawing.Size(403, 26);
             this.cbxQueryItem1.TabIndex = 5;
             // 
             // lblQueryItem1
             // 
             this.lblQueryItem1.AutoSize = true;
-            this.lblQueryItem1.Location = new System.Drawing.Point(31, 87);
+            this.lblQueryItem1.Location = new System.Drawing.Point(18, 87);
             this.lblQueryItem1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblQueryItem1.Name = "lblQueryItem1";
             this.lblQueryItem1.Size = new System.Drawing.Size(76, 19);
@@ -309,7 +309,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(287, 29);
+            this.label6.Location = new System.Drawing.Point(305, 29);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(19, 19);
@@ -318,7 +318,7 @@
             // 
             // dtpEnd
             // 
-            this.dtpEnd.Location = new System.Drawing.Point(316, 22);
+            this.dtpEnd.Location = new System.Drawing.Point(334, 22);
             this.dtpEnd.Margin = new System.Windows.Forms.Padding(4);
             this.dtpEnd.Name = "dtpEnd";
             this.dtpEnd.Size = new System.Drawing.Size(180, 28);
@@ -326,7 +326,7 @@
             // 
             // dtpBegin
             // 
-            this.dtpBegin.Location = new System.Drawing.Point(93, 22);
+            this.dtpBegin.Location = new System.Drawing.Point(111, 22);
             this.dtpBegin.Margin = new System.Windows.Forms.Padding(4);
             this.dtpBegin.Name = "dtpBegin";
             this.dtpBegin.Size = new System.Drawing.Size(180, 28);
@@ -335,7 +335,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(31, 29);
+            this.label5.Location = new System.Drawing.Point(18, 29);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(47, 19);
@@ -350,14 +350,14 @@
             this.tpSys.Controls.Add(this.label4);
             this.tpSys.Location = new System.Drawing.Point(4, 28);
             this.tpSys.Name = "tpSys";
-            this.tpSys.Size = new System.Drawing.Size(823, 468);
+            this.tpSys.Size = new System.Drawing.Size(850, 473);
             this.tpSys.TabIndex = 2;
             this.tpSys.Text = "系统设定";
             this.tpSys.UseVisualStyleBackColor = true;
             // 
             // btnEditSys
             // 
-            this.btnEditSys.Location = new System.Drawing.Point(683, 390);
+            this.btnEditSys.Location = new System.Drawing.Point(709, 407);
             this.btnEditSys.Name = "btnEditSys";
             this.btnEditSys.Size = new System.Drawing.Size(117, 42);
             this.btnEditSys.TabIndex = 4;
@@ -377,14 +377,14 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(31, 110);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(769, 243);
+            this.groupBox1.Size = new System.Drawing.Size(795, 243);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "数据项设定";
             // 
             // btnEditOpt2
             // 
-            this.btnEditOpt2.Location = new System.Drawing.Point(646, 103);
+            this.btnEditOpt2.Location = new System.Drawing.Point(672, 101);
             this.btnEditOpt2.Name = "btnEditOpt2";
             this.btnEditOpt2.Size = new System.Drawing.Size(117, 42);
             this.btnEditOpt2.TabIndex = 7;
@@ -394,7 +394,7 @@
             // 
             // btnEditOpt1
             // 
-            this.btnEditOpt1.Location = new System.Drawing.Point(646, 43);
+            this.btnEditOpt1.Location = new System.Drawing.Point(672, 41);
             this.btnEditOpt1.Name = "btnEditOpt1";
             this.btnEditOpt1.Size = new System.Drawing.Size(117, 42);
             this.btnEditOpt1.TabIndex = 6;
@@ -407,7 +407,7 @@
             this.tbxItem3Title.Location = new System.Drawing.Point(175, 174);
             this.tbxItem3Title.Margin = new System.Windows.Forms.Padding(4);
             this.tbxItem3Title.Name = "tbxItem3Title";
-            this.tbxItem3Title.Size = new System.Drawing.Size(450, 28);
+            this.tbxItem3Title.Size = new System.Drawing.Size(467, 28);
             this.tbxItem3Title.TabIndex = 5;
             // 
             // label3
@@ -425,7 +425,7 @@
             this.tbxItem2Title.Location = new System.Drawing.Point(175, 110);
             this.tbxItem2Title.Margin = new System.Windows.Forms.Padding(4);
             this.tbxItem2Title.Name = "tbxItem2Title";
-            this.tbxItem2Title.Size = new System.Drawing.Size(450, 28);
+            this.tbxItem2Title.Size = new System.Drawing.Size(467, 28);
             this.tbxItem2Title.TabIndex = 3;
             // 
             // label2
@@ -443,7 +443,7 @@
             this.tbxItem1Title.Location = new System.Drawing.Point(175, 50);
             this.tbxItem1Title.Margin = new System.Windows.Forms.Padding(4);
             this.tbxItem1Title.Name = "tbxItem1Title";
-            this.tbxItem1Title.Size = new System.Drawing.Size(450, 28);
+            this.tbxItem1Title.Size = new System.Drawing.Size(467, 28);
             this.tbxItem1Title.TabIndex = 1;
             // 
             // label1
@@ -479,14 +479,14 @@
             this.tpUser.Controls.Add(this.dgvUsers);
             this.tpUser.Location = new System.Drawing.Point(4, 28);
             this.tpUser.Name = "tpUser";
-            this.tpUser.Size = new System.Drawing.Size(823, 468);
+            this.tpUser.Size = new System.Drawing.Size(850, 473);
             this.tpUser.TabIndex = 3;
             this.tpUser.Text = "用户管理";
             this.tpUser.UseVisualStyleBackColor = true;
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(537, 402);
+            this.button5.Location = new System.Drawing.Point(565, 414);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(269, 42);
             this.button5.TabIndex = 10;
@@ -496,7 +496,7 @@
             // 
             // btnNewUser
             // 
-            this.btnNewUser.Location = new System.Drawing.Point(17, 402);
+            this.btnNewUser.Location = new System.Drawing.Point(17, 414);
             this.btnNewUser.Name = "btnNewUser";
             this.btnNewUser.Size = new System.Drawing.Size(117, 42);
             this.btnNewUser.TabIndex = 7;
@@ -518,7 +518,7 @@
             this.dgvUsers.RowHeadersVisible = false;
             this.dgvUsers.RowTemplate.Height = 37;
             this.dgvUsers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvUsers.Size = new System.Drawing.Size(789, 368);
+            this.dgvUsers.Size = new System.Drawing.Size(817, 395);
             this.dgvUsers.TabIndex = 0;
             this.dgvUsers.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsers_CellValueChanged);
             this.dgvUsers.CurrentCellDirtyStateChanged += new System.EventHandler(this.dgvUsers_CurrentCellDirtyStateChanged);
