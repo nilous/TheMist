@@ -31,10 +31,8 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.btnSave = new System.Windows.Forms.Button();
-            this.tbxItem3 = new System.Windows.Forms.TextBox();
             this.cbxItem2 = new System.Windows.Forms.ComboBox();
             this.cbxItem1 = new System.Windows.Forms.ComboBox();
-            this.lblItem3 = new System.Windows.Forms.Label();
             this.lblItem2 = new System.Windows.Forms.Label();
             this.lblItem1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
@@ -44,12 +42,6 @@
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnExport = new System.Windows.Forms.Button();
             this.dgvQueryResults = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnQuery = new System.Windows.Forms.Button();
             this.cbxQueryItem1 = new System.Windows.Forms.ComboBox();
             this.lblQueryItem1 = new System.Windows.Forms.Label();
@@ -80,6 +72,18 @@
             this.Column8 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.gbxItem3 = new System.Windows.Forms.GroupBox();
+            this.tbxItem3 = new System.Windows.Forms.TextBox();
+            this.tbxItem3_2 = new System.Windows.Forms.TextBox();
+            this.tbxItem3_3 = new System.Windows.Forms.TextBox();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -89,6 +93,7 @@
             this.tpUser.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsers)).BeginInit();
             this.statusStrip1.SuspendLayout();
+            this.gbxItem3.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -97,33 +102,32 @@
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tpSys);
             this.tabControl1.Controls.Add(this.tpUser);
-            this.tabControl1.Location = new System.Drawing.Point(25, 12);
+            this.tabControl1.Location = new System.Drawing.Point(12, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(831, 500);
+            this.tabControl1.Size = new System.Drawing.Size(858, 505);
             this.tabControl1.TabIndex = 0;
             this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.gbxItem3);
             this.tabPage1.Controls.Add(this.btnSave);
-            this.tabPage1.Controls.Add(this.tbxItem3);
             this.tabPage1.Controls.Add(this.cbxItem2);
             this.tabPage1.Controls.Add(this.cbxItem1);
-            this.tabPage1.Controls.Add(this.lblItem3);
             this.tabPage1.Controls.Add(this.lblItem2);
             this.tabPage1.Controls.Add(this.lblItem1);
-            this.tabPage1.Location = new System.Drawing.Point(4, 32);
+            this.tabPage1.Location = new System.Drawing.Point(4, 28);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1290, 819);
+            this.tabPage1.Size = new System.Drawing.Size(850, 473);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "数据录入";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(686, 398);
+            this.btnSave.Location = new System.Drawing.Point(705, 425);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(117, 42);
             this.btnSave.TabIndex = 12;
@@ -131,21 +135,13 @@
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // tbxItem3
-            // 
-            this.tbxItem3.Location = new System.Drawing.Point(161, 150);
-            this.tbxItem3.Multiline = true;
-            this.tbxItem3.Name = "tbxItem3";
-            this.tbxItem3.Size = new System.Drawing.Size(642, 231);
-            this.tbxItem3.TabIndex = 11;
-            // 
             // cbxItem2
             // 
             this.cbxItem2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxItem2.FormattingEnabled = true;
             this.cbxItem2.Location = new System.Drawing.Point(161, 93);
             this.cbxItem2.Name = "cbxItem2";
-            this.cbxItem2.Size = new System.Drawing.Size(642, 30);
+            this.cbxItem2.Size = new System.Drawing.Size(661, 26);
             this.cbxItem2.TabIndex = 10;
             // 
             // cbxItem1
@@ -154,24 +150,15 @@
             this.cbxItem1.FormattingEnabled = true;
             this.cbxItem1.Location = new System.Drawing.Point(161, 42);
             this.cbxItem1.Name = "cbxItem1";
-            this.cbxItem1.Size = new System.Drawing.Size(642, 30);
+            this.cbxItem1.Size = new System.Drawing.Size(661, 26);
             this.cbxItem1.TabIndex = 9;
-            // 
-            // lblItem3
-            // 
-            this.lblItem3.AutoSize = true;
-            this.lblItem3.Location = new System.Drawing.Point(35, 150);
-            this.lblItem3.Name = "lblItem3";
-            this.lblItem3.Size = new System.Drawing.Size(87, 22);
-            this.lblItem3.TabIndex = 8;
-            this.lblItem3.Text = "数据项3";
             // 
             // lblItem2
             // 
             this.lblItem2.AutoSize = true;
             this.lblItem2.Location = new System.Drawing.Point(35, 96);
             this.lblItem2.Name = "lblItem2";
-            this.lblItem2.Size = new System.Drawing.Size(87, 22);
+            this.lblItem2.Size = new System.Drawing.Size(76, 19);
             this.lblItem2.TabIndex = 7;
             this.lblItem2.Text = "数据项2";
             // 
@@ -180,7 +167,7 @@
             this.lblItem1.AutoSize = true;
             this.lblItem1.Location = new System.Drawing.Point(35, 45);
             this.lblItem1.Name = "lblItem1";
-            this.lblItem1.Size = new System.Drawing.Size(87, 22);
+            this.lblItem1.Size = new System.Drawing.Size(76, 19);
             this.lblItem1.TabIndex = 6;
             this.lblItem1.Text = "数据项1";
             // 
@@ -199,10 +186,10 @@
             this.tabPage2.Controls.Add(this.dtpEnd);
             this.tabPage2.Controls.Add(this.dtpBegin);
             this.tabPage2.Controls.Add(this.label5);
-            this.tabPage2.Location = new System.Drawing.Point(4, 32);
+            this.tabPage2.Location = new System.Drawing.Point(4, 28);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1290, 819);
+            this.tabPage2.Size = new System.Drawing.Size(850, 473);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "数据查询";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -230,7 +217,7 @@
             this.cbxLimit.Location = new System.Drawing.Point(640, 26);
             this.cbxLimit.Margin = new System.Windows.Forms.Padding(4);
             this.cbxLimit.Name = "cbxLimit";
-            this.cbxLimit.Size = new System.Drawing.Size(144, 30);
+            this.cbxLimit.Size = new System.Drawing.Size(144, 26);
             this.cbxLimit.TabIndex = 11;
             // 
             // label7
@@ -239,7 +226,7 @@
             this.label7.Location = new System.Drawing.Point(534, 29);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(98, 22);
+            this.label7.Size = new System.Drawing.Size(85, 19);
             this.label7.TabIndex = 10;
             this.label7.Text = "查询条数";
             // 
@@ -275,7 +262,9 @@
             this.Column10,
             this.Column2,
             this.Column3,
-            this.Column4});
+            this.Column4,
+            this.Column11,
+            this.Column12});
             this.dgvQueryResults.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvQueryResults.Location = new System.Drawing.Point(35, 135);
             this.dgvQueryResults.Margin = new System.Windows.Forms.Padding(4);
@@ -285,36 +274,6 @@
             this.dgvQueryResults.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvQueryResults.Size = new System.Drawing.Size(749, 249);
             this.dgvQueryResults.TabIndex = 7;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "ID";
-            this.Column1.Name = "Column1";
-            // 
-            // Column9
-            // 
-            this.Column9.HeaderText = "用户";
-            this.Column9.Name = "Column9";
-            // 
-            // Column10
-            // 
-            this.Column10.HeaderText = "录入时间";
-            this.Column10.Name = "Column10";
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "数据项1";
-            this.Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "数据项2";
-            this.Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "数据项3";
-            this.Column4.Name = "Column4";
             // 
             // btnQuery
             // 
@@ -334,7 +293,7 @@
             this.cbxQueryItem1.Location = new System.Drawing.Point(126, 84);
             this.cbxQueryItem1.Margin = new System.Windows.Forms.Padding(4);
             this.cbxQueryItem1.Name = "cbxQueryItem1";
-            this.cbxQueryItem1.Size = new System.Drawing.Size(493, 30);
+            this.cbxQueryItem1.Size = new System.Drawing.Size(493, 26);
             this.cbxQueryItem1.TabIndex = 5;
             // 
             // lblQueryItem1
@@ -343,7 +302,7 @@
             this.lblQueryItem1.Location = new System.Drawing.Point(31, 87);
             this.lblQueryItem1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblQueryItem1.Name = "lblQueryItem1";
-            this.lblQueryItem1.Size = new System.Drawing.Size(87, 22);
+            this.lblQueryItem1.Size = new System.Drawing.Size(76, 19);
             this.lblQueryItem1.TabIndex = 4;
             this.lblQueryItem1.Text = "数据项1";
             // 
@@ -353,7 +312,7 @@
             this.label6.Location = new System.Drawing.Point(287, 29);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(21, 22);
+            this.label6.Size = new System.Drawing.Size(19, 19);
             this.label6.TabIndex = 3;
             this.label6.Text = "-";
             // 
@@ -362,7 +321,7 @@
             this.dtpEnd.Location = new System.Drawing.Point(316, 22);
             this.dtpEnd.Margin = new System.Windows.Forms.Padding(4);
             this.dtpEnd.Name = "dtpEnd";
-            this.dtpEnd.Size = new System.Drawing.Size(180, 33);
+            this.dtpEnd.Size = new System.Drawing.Size(180, 28);
             this.dtpEnd.TabIndex = 2;
             // 
             // dtpBegin
@@ -370,7 +329,7 @@
             this.dtpBegin.Location = new System.Drawing.Point(93, 22);
             this.dtpBegin.Margin = new System.Windows.Forms.Padding(4);
             this.dtpBegin.Name = "dtpBegin";
-            this.dtpBegin.Size = new System.Drawing.Size(180, 33);
+            this.dtpBegin.Size = new System.Drawing.Size(180, 28);
             this.dtpBegin.TabIndex = 1;
             // 
             // label5
@@ -379,7 +338,7 @@
             this.label5.Location = new System.Drawing.Point(31, 29);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(54, 22);
+            this.label5.Size = new System.Drawing.Size(47, 19);
             this.label5.TabIndex = 0;
             this.label5.Text = "日期";
             // 
@@ -389,9 +348,9 @@
             this.tpSys.Controls.Add(this.groupBox1);
             this.tpSys.Controls.Add(this.tbxSysName);
             this.tpSys.Controls.Add(this.label4);
-            this.tpSys.Location = new System.Drawing.Point(4, 32);
+            this.tpSys.Location = new System.Drawing.Point(4, 28);
             this.tpSys.Name = "tpSys";
-            this.tpSys.Size = new System.Drawing.Size(1290, 819);
+            this.tpSys.Size = new System.Drawing.Size(823, 468);
             this.tpSys.TabIndex = 2;
             this.tpSys.Text = "系统设定";
             this.tpSys.UseVisualStyleBackColor = true;
@@ -448,7 +407,7 @@
             this.tbxItem3Title.Location = new System.Drawing.Point(175, 174);
             this.tbxItem3Title.Margin = new System.Windows.Forms.Padding(4);
             this.tbxItem3Title.Name = "tbxItem3Title";
-            this.tbxItem3Title.Size = new System.Drawing.Size(450, 33);
+            this.tbxItem3Title.Size = new System.Drawing.Size(450, 28);
             this.tbxItem3Title.TabIndex = 5;
             // 
             // label3
@@ -457,7 +416,7 @@
             this.label3.Location = new System.Drawing.Point(26, 177);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(131, 22);
+            this.label3.Size = new System.Drawing.Size(114, 19);
             this.label3.TabIndex = 4;
             this.label3.Text = "数据项3名称";
             // 
@@ -466,7 +425,7 @@
             this.tbxItem2Title.Location = new System.Drawing.Point(175, 110);
             this.tbxItem2Title.Margin = new System.Windows.Forms.Padding(4);
             this.tbxItem2Title.Name = "tbxItem2Title";
-            this.tbxItem2Title.Size = new System.Drawing.Size(450, 33);
+            this.tbxItem2Title.Size = new System.Drawing.Size(450, 28);
             this.tbxItem2Title.TabIndex = 3;
             // 
             // label2
@@ -475,7 +434,7 @@
             this.label2.Location = new System.Drawing.Point(26, 113);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(131, 22);
+            this.label2.Size = new System.Drawing.Size(114, 19);
             this.label2.TabIndex = 2;
             this.label2.Text = "数据项2名称";
             // 
@@ -484,7 +443,7 @@
             this.tbxItem1Title.Location = new System.Drawing.Point(175, 50);
             this.tbxItem1Title.Margin = new System.Windows.Forms.Padding(4);
             this.tbxItem1Title.Name = "tbxItem1Title";
-            this.tbxItem1Title.Size = new System.Drawing.Size(450, 33);
+            this.tbxItem1Title.Size = new System.Drawing.Size(450, 28);
             this.tbxItem1Title.TabIndex = 1;
             // 
             // label1
@@ -493,7 +452,7 @@
             this.label1.Location = new System.Drawing.Point(26, 53);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(131, 22);
+            this.label1.Size = new System.Drawing.Size(114, 19);
             this.label1.TabIndex = 0;
             this.label1.Text = "数据项1名称";
             // 
@@ -501,7 +460,7 @@
             // 
             this.tbxSysName.Location = new System.Drawing.Point(140, 26);
             this.tbxSysName.Name = "tbxSysName";
-            this.tbxSysName.Size = new System.Drawing.Size(660, 33);
+            this.tbxSysName.Size = new System.Drawing.Size(660, 28);
             this.tbxSysName.TabIndex = 1;
             // 
             // label4
@@ -509,7 +468,7 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(27, 29);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(98, 22);
+            this.label4.Size = new System.Drawing.Size(85, 19);
             this.label4.TabIndex = 0;
             this.label4.Text = "系统名称";
             // 
@@ -518,9 +477,9 @@
             this.tpUser.Controls.Add(this.button5);
             this.tpUser.Controls.Add(this.btnNewUser);
             this.tpUser.Controls.Add(this.dgvUsers);
-            this.tpUser.Location = new System.Drawing.Point(4, 32);
+            this.tpUser.Location = new System.Drawing.Point(4, 28);
             this.tpUser.Name = "tpUser";
-            this.tpUser.Size = new System.Drawing.Size(823, 464);
+            this.tpUser.Size = new System.Drawing.Size(823, 468);
             this.tpUser.TabIndex = 3;
             this.tpUser.Text = "用户管理";
             this.tpUser.UseVisualStyleBackColor = true;
@@ -593,9 +552,9 @@
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 517);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 529);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(878, 27);
+            this.statusStrip1.Size = new System.Drawing.Size(882, 24);
             this.statusStrip1.TabIndex = 1;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -603,14 +562,90 @@
             // 
             this.toolStripStatusLabel1.Font = new System.Drawing.Font("宋体", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(241, 22);
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(219, 19);
             this.toolStripStatusLabel1.Text = "toolStripStatusLabel1";
+            // 
+            // gbxItem3
+            // 
+            this.gbxItem3.Controls.Add(this.tbxItem3_3);
+            this.gbxItem3.Controls.Add(this.tbxItem3_2);
+            this.gbxItem3.Controls.Add(this.tbxItem3);
+            this.gbxItem3.Location = new System.Drawing.Point(39, 146);
+            this.gbxItem3.Name = "gbxItem3";
+            this.gbxItem3.Size = new System.Drawing.Size(783, 273);
+            this.gbxItem3.TabIndex = 13;
+            this.gbxItem3.TabStop = false;
+            this.gbxItem3.Text = "数据项3";
+            // 
+            // tbxItem3
+            // 
+            this.tbxItem3.Location = new System.Drawing.Point(17, 43);
+            this.tbxItem3.Multiline = true;
+            this.tbxItem3.Name = "tbxItem3";
+            this.tbxItem3.Size = new System.Drawing.Size(746, 67);
+            this.tbxItem3.TabIndex = 0;
+            // 
+            // tbxItem3_2
+            // 
+            this.tbxItem3_2.Location = new System.Drawing.Point(17, 116);
+            this.tbxItem3_2.Multiline = true;
+            this.tbxItem3_2.Name = "tbxItem3_2";
+            this.tbxItem3_2.Size = new System.Drawing.Size(746, 67);
+            this.tbxItem3_2.TabIndex = 1;
+            // 
+            // tbxItem3_3
+            // 
+            this.tbxItem3_3.Location = new System.Drawing.Point(18, 189);
+            this.tbxItem3_3.Multiline = true;
+            this.tbxItem3_3.Name = "tbxItem3_3";
+            this.tbxItem3_3.Size = new System.Drawing.Size(746, 67);
+            this.tbxItem3_3.TabIndex = 2;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "ID";
+            this.Column1.Name = "Column1";
+            // 
+            // Column9
+            // 
+            this.Column9.HeaderText = "用户";
+            this.Column9.Name = "Column9";
+            // 
+            // Column10
+            // 
+            this.Column10.HeaderText = "录入时间";
+            this.Column10.Name = "Column10";
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "数据项1";
+            this.Column2.Name = "Column2";
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "数据项2";
+            this.Column3.Name = "Column3";
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "数据项3";
+            this.Column4.Name = "Column4";
+            // 
+            // Column11
+            // 
+            this.Column11.HeaderText = "数据项3_2";
+            this.Column11.Name = "Column11";
+            // 
+            // Column12
+            // 
+            this.Column12.HeaderText = "数据项3_3";
+            this.Column12.Name = "Column12";
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(878, 544);
+            this.ClientSize = new System.Drawing.Size(882, 553);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.tabControl1);
             this.Font = new System.Drawing.Font("宋体", 11F);
@@ -633,6 +668,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsers)).EndInit();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
+            this.gbxItem3.ResumeLayout(false);
+            this.gbxItem3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -645,10 +682,8 @@
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tpSys;
         private System.Windows.Forms.TabPage tpUser;
-        private System.Windows.Forms.TextBox tbxItem3;
         private System.Windows.Forms.ComboBox cbxItem2;
         private System.Windows.Forms.ComboBox cbxItem1;
-        private System.Windows.Forms.Label lblItem3;
         private System.Windows.Forms.Label lblItem2;
         private System.Windows.Forms.Label lblItem1;
         private System.Windows.Forms.GroupBox groupBox1;
@@ -686,12 +721,18 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn Column8;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
+        private System.Windows.Forms.GroupBox gbxItem3;
+        private System.Windows.Forms.TextBox tbxItem3_3;
+        private System.Windows.Forms.TextBox tbxItem3_2;
+        private System.Windows.Forms.TextBox tbxItem3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column11;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column12;
     }
 }
 

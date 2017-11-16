@@ -134,8 +134,9 @@ namespace TheMist
             lblItem1.AutoSize = true;
             lblItem2.Text = Item2;
             lblItem2.AutoSize = true;
-            lblItem3.Text = Item3;
-            lblItem3.AutoSize = true;
+            //lblItem3.Text = Item3;
+            //lblItem3.AutoSize = true;
+            gbxItem3.Text = Item3;
             lblQueryItem1.Text = Item1;
             lblQueryItem1.AutoSize = true;
 
@@ -159,6 +160,8 @@ namespace TheMist
             dgvQueryResults.Columns[3].HeaderText = Item1;
             dgvQueryResults.Columns[4].HeaderText = Item2;
             dgvQueryResults.Columns[5].HeaderText = Item3;
+            dgvQueryResults.Columns[6].HeaderText = $"{Item3}_2";
+            dgvQueryResults.Columns[7].HeaderText = $"{Item3}_3";
         }
 
 
@@ -375,11 +378,13 @@ namespace TheMist
                     using (var cmd = new NpgsqlCommand())
                     {
                         cmd.Connection = conn;
-                        cmd.CommandText = "insert into info(user_id, item1, item2, item3) values(@u, @x, @y, @z)";
-                        cmd.Parameters.AddWithValue("u", UserID);
+                        cmd.CommandText = "insert into info(user_id, item1, item2, item3, item3_2, item3_3) values(@user, @x, @y, @u, @v, @w)";
+                        cmd.Parameters.AddWithValue("user", UserID);
                         cmd.Parameters.AddWithValue("x", cbxItem1.Text);
                         cmd.Parameters.AddWithValue("y", cbxItem2.Text);
-                        cmd.Parameters.AddWithValue("z", tbxItem3.Text.Trim());
+                        cmd.Parameters.AddWithValue("u", tbxItem3.Text.Trim());
+                        cmd.Parameters.AddWithValue("v", tbxItem3_2.Text.Trim());
+                        cmd.Parameters.AddWithValue("w", tbxItem3_3.Text.Trim());
                         cmd.ExecuteNonQuery();
                     }
                 }
@@ -390,6 +395,8 @@ namespace TheMist
             }
 
             tbxItem3.Text = "";
+            tbxItem3_2.Text = "";
+            tbxItem3_3.Text = "";
             MessageBox.Show("数据成功写入数据库", "操作成功");
         }
 
@@ -406,7 +413,7 @@ namespace TheMist
                     using (var cmd = new NpgsqlCommand())
                     {
                         cmd.Connection = conn;
-                        var cmdText = "select info.id, item1, item2, item3, login, created_at from info, myuser where myuser.id = info.user_id and created_at >= @b::timestamp and created_at <= @e::timestamp";
+                        var cmdText = "select info.id, item1, item2, item3, login, created_at, item3_2, item3_3 from info, myuser where myuser.id = info.user_id and created_at >= @b::timestamp and created_at <= @e::timestamp";
 
                         if (cbxQueryItem1.SelectedIndex != cbxQueryItem1.Items.Count - 1)
                             cmdText += $" and item1 = @x";
@@ -446,6 +453,8 @@ namespace TheMist
                                 dgvQueryResults.Rows[index].Cells[5].Value = reader[3].ToString();
                                 dgvQueryResults.Rows[index].Cells[1].Value = reader[4].ToString();
                                 dgvQueryResults.Rows[index].Cells[2].Value = reader[5].ToString();
+                                dgvQueryResults.Rows[index].Cells[6].Value = reader[6].ToString();
+                                dgvQueryResults.Rows[index].Cells[7].Value = reader[7].ToString();
                             }
                         }
                     }
