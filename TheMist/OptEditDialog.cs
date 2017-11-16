@@ -22,12 +22,13 @@ namespace TheMist
 
         private void OptEditDialog_Load(object sender, EventArgs e)
         {
-            Helpers.AutoSizeColumn(dgvOpts);
+            
             foreach (var opt in _opts)
             {
                 var index = dgvOpts.Rows.Add();
                 dgvOpts.Rows[index].Cells[0].Value = opt;
             }
+            Helpers.AutoSizeColumn(dgvOpts);
         }
 
         private void btnAddOpt_Click(object sender, EventArgs e)

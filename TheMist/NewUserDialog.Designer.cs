@@ -40,7 +40,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(67, 67);
+            this.label1.Location = new System.Drawing.Point(41, 39);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(76, 22);
@@ -50,7 +50,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(67, 150);
+            this.label2.Location = new System.Drawing.Point(41, 122);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(54, 22);
@@ -59,16 +59,16 @@
             // 
             // tbxLogin
             // 
-            this.tbxLogin.Location = new System.Drawing.Point(248, 64);
-            this.tbxLogin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbxLogin.Location = new System.Drawing.Point(163, 36);
+            this.tbxLogin.Margin = new System.Windows.Forms.Padding(4);
             this.tbxLogin.Name = "tbxLogin";
             this.tbxLogin.Size = new System.Drawing.Size(630, 33);
             this.tbxLogin.TabIndex = 2;
             // 
             // tbxPassword
             // 
-            this.tbxPassword.Location = new System.Drawing.Point(248, 147);
-            this.tbxPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbxPassword.Location = new System.Drawing.Point(163, 111);
+            this.tbxPassword.Margin = new System.Windows.Forms.Padding(4);
             this.tbxPassword.Name = "tbxPassword";
             this.tbxPassword.Size = new System.Drawing.Size(630, 33);
             this.tbxPassword.TabIndex = 3;
@@ -76,8 +76,8 @@
             // cbxAdmin
             // 
             this.cbxAdmin.AutoSize = true;
-            this.cbxAdmin.Location = new System.Drawing.Point(248, 230);
-            this.cbxAdmin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbxAdmin.Location = new System.Drawing.Point(163, 190);
+            this.cbxAdmin.Margin = new System.Windows.Forms.Padding(4);
             this.cbxAdmin.Name = "cbxAdmin";
             this.cbxAdmin.Size = new System.Drawing.Size(146, 26);
             this.cbxAdmin.TabIndex = 4;
@@ -86,7 +86,7 @@
             // 
             // btnNewUser
             // 
-            this.btnNewUser.Location = new System.Drawing.Point(761, 218);
+            this.btnNewUser.Location = new System.Drawing.Point(676, 177);
             this.btnNewUser.Margin = new System.Windows.Forms.Padding(2);
             this.btnNewUser.Name = "btnNewUser";
             this.btnNewUser.Size = new System.Drawing.Size(117, 50);
@@ -97,7 +97,7 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(615, 218);
+            this.btnCancel.Location = new System.Drawing.Point(530, 177);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(117, 50);
@@ -110,7 +110,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(980, 331);
+            this.ClientSize = new System.Drawing.Size(868, 274);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnNewUser);
             this.Controls.Add(this.cbxAdmin);
@@ -120,7 +120,7 @@
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("宋体", 11F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "NewUserDialog";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;

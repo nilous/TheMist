@@ -41,6 +41,8 @@ namespace TheMist
                 return;
             }
 
+            WindowState = FormWindowState.Maximized;
+
             // 删除需要管理员权限的标签
             if (!IsAdmin)
             {

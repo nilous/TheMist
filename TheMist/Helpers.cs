@@ -15,6 +15,7 @@ namespace TheMist
         /// <param name="dgViewFiles"></param>
         public static void AutoSizeColumn(DataGridView dgViewFiles, int start = 0)
         {
+            /*
             int width = 0;
             //使列自使用宽度
             //对于DataGridView的每一个列都调整
@@ -38,6 +39,8 @@ namespace TheMist
             }
             //冻结某列 从左开始 0，1，2
             dgViewFiles.Columns[start].Frozen = true;
+            */
+            dgViewFiles.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
         }
     }
 }

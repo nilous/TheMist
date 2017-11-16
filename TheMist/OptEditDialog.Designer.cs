@@ -40,10 +40,10 @@
             // 
             // btnOk
             // 
-            this.btnOk.Location = new System.Drawing.Point(1151, 847);
+            this.btnOk.Location = new System.Drawing.Point(731, 480);
             this.btnOk.Margin = new System.Windows.Forms.Padding(2);
             this.btnOk.Name = "btnOk";
-            this.btnOk.Size = new System.Drawing.Size(117, 50);
+            this.btnOk.Size = new System.Drawing.Size(117, 42);
             this.btnOk.TabIndex = 5;
             this.btnOk.Text = "保存修改";
             this.btnOk.UseVisualStyleBackColor = true;
@@ -51,10 +51,10 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(986, 847);
+            this.btnCancel.Location = new System.Drawing.Point(566, 480);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(117, 50);
+            this.btnCancel.Size = new System.Drawing.Size(117, 42);
             this.btnCancel.TabIndex = 6;
             this.btnCancel.Text = "取消";
             this.btnCancel.UseVisualStyleBackColor = true;
@@ -67,12 +67,12 @@
             this.dgvOpts.ColumnHeadersVisible = false;
             this.dgvOpts.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.opt});
-            this.dgvOpts.Location = new System.Drawing.Point(35, 106);
-            this.dgvOpts.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvOpts.Location = new System.Drawing.Point(26, 79);
+            this.dgvOpts.Margin = new System.Windows.Forms.Padding(4);
             this.dgvOpts.Name = "dgvOpts";
             this.dgvOpts.RowHeadersVisible = false;
             this.dgvOpts.RowTemplate.Height = 30;
-            this.dgvOpts.Size = new System.Drawing.Size(1221, 717);
+            this.dgvOpts.Size = new System.Drawing.Size(822, 385);
             this.dgvOpts.TabIndex = 7;
             // 
             // opt
@@ -82,18 +82,18 @@
             // 
             // tbxOptContent
             // 
-            this.tbxOptContent.Location = new System.Drawing.Point(35, 33);
-            this.tbxOptContent.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbxOptContent.Location = new System.Drawing.Point(26, 25);
+            this.tbxOptContent.Margin = new System.Windows.Forms.Padding(4);
             this.tbxOptContent.Name = "tbxOptContent";
-            this.tbxOptContent.Size = new System.Drawing.Size(1067, 33);
+            this.tbxOptContent.Size = new System.Drawing.Size(682, 33);
             this.tbxOptContent.TabIndex = 8;
             // 
             // btnAddOpt
             // 
-            this.btnAddOpt.Location = new System.Drawing.Point(1139, 23);
+            this.btnAddOpt.Location = new System.Drawing.Point(731, 18);
             this.btnAddOpt.Margin = new System.Windows.Forms.Padding(2);
             this.btnAddOpt.Name = "btnAddOpt";
-            this.btnAddOpt.Size = new System.Drawing.Size(117, 50);
+            this.btnAddOpt.Size = new System.Drawing.Size(117, 42);
             this.btnAddOpt.TabIndex = 9;
             this.btnAddOpt.Text = "添加选项";
             this.btnAddOpt.UseVisualStyleBackColor = true;
@@ -101,10 +101,10 @@
             // 
             // btnRemoveOpt
             // 
-            this.btnRemoveOpt.Location = new System.Drawing.Point(35, 847);
+            this.btnRemoveOpt.Location = new System.Drawing.Point(26, 480);
             this.btnRemoveOpt.Margin = new System.Windows.Forms.Padding(2);
             this.btnRemoveOpt.Name = "btnRemoveOpt";
-            this.btnRemoveOpt.Size = new System.Drawing.Size(170, 50);
+            this.btnRemoveOpt.Size = new System.Drawing.Size(170, 42);
             this.btnRemoveOpt.TabIndex = 10;
             this.btnRemoveOpt.Text = "删除选中选项";
             this.btnRemoveOpt.UseVisualStyleBackColor = true;
@@ -114,7 +114,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1283, 922);
+            this.ClientSize = new System.Drawing.Size(878, 544);
             this.Controls.Add(this.btnRemoveOpt);
             this.Controls.Add(this.btnAddOpt);
             this.Controls.Add(this.tbxOptContent);
@@ -123,7 +123,7 @@
             this.Controls.Add(this.btnOk);
             this.Font = new System.Drawing.Font("宋体", 11F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "OptEditDialog";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;

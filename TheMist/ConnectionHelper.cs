@@ -29,7 +29,7 @@ namespace TheMist
 
         public void LoadSettings()
         {
-            MessageBox.Show(DatabaseConfigFile);
+            //MessageBox.Show(DatabaseConfigFile);
             try
             {
                 using (var reader = File.OpenText(DatabaseConfigFile))
@@ -66,9 +66,9 @@ namespace TheMist
                     }
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
+                MessageBox.Show(ex.Message);
             }
         }
     }
