@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Npgsql;
 using System.IO;
+using System.Diagnostics;
 
 namespace TheMist
 {
@@ -50,6 +51,7 @@ namespace TheMist
                 tabControl1.TabPages.RemoveAt(2);
 
                 dgvQueryResults.Columns[1].Visible = false;
+                btnUpload.Visible = btnRm.Visible = false;
             }
 
             
@@ -364,6 +366,11 @@ namespace TheMist
 
                 Helpers.AutoSizeColumn(dgvUsers);
                 _editingUser = true;
+            }
+            // 共享文件
+            else if (tabControl1.SelectedIndex == 4)
+            {
+                RefreshFileList();
             }
         }
 
@@ -734,6 +741,225 @@ namespace TheMist
             btnNewUser.Top = dgvUsers.Top + dgvUsers.Height + 5;
             button5.Top = btnNewUser.Top;
             button5.Left = dgvUsers.Left + dgvUsers.Width - button5.Width;
+
+            // 共享文件
+            dgvFiles.Width = Width - dgvFiles.Left - 60;
+            dgvFiles.Height = Height - dgvFiles.Top - 160;
+
+            btnUpload.Top = btnRm.Top = btnRefresh.Top = btnDownload.Top = dgvFiles.Top + dgvFiles.Height + 5;
+            btnDownload.Left = dgvFiles.Left + dgvFiles.Width - btnDownload.Width;
+            btnRefresh.Left = btnDownload.Left - btnRefresh.Width - 20;
+        }
+
+        private void RefreshFileList()
+        {
+            dgvFiles.Rows.Clear();
+
+            using (var conn = ConnectionHelper.Instance.Connect())
+            {
+                conn.Open();
+
+                using (var cmd = new NpgsqlCommand())
+                {
+                    cmd.Connection = conn;
+                    cmd.CommandText = "select name from mydoc";
+
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            var index = dgvFiles.Rows.Add();
+                            dgvFiles.Rows[index].Cells[0].Value = reader[0].ToString();
+                        }
+                    }
+                }
+            }
+
+            Helpers.AutoSizeColumn(dgvFiles);
+        }
+
+        private void btnUpload_Click(object sender, EventArgs e)
+        {
+            var ofd = new OpenFileDialog();
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                byte[] bytes;
+                try
+                {
+                    using (var fs = new FileStream(ofd.FileName, FileMode.Open))
+                    {
+                        using (var reader = new BinaryReader(fs))
+                        {
+                            var fileInfo = new FileInfo(ofd.FileName);
+                            var len = Convert.ToInt32(fileInfo.Length);  // FIXME:
+                            bytes = reader.ReadBytes(len);
+                        }
+                    }
+
+                    using (var conn = ConnectionHelper.Instance.Connect())
+                    {
+                        conn.Open();
+
+                        var fn = Path.GetFileName(ofd.FileName);
+                        using (var cmd = new NpgsqlCommand())
+                        {
+                            cmd.Connection = conn;
+                            cmd.CommandText = $"insert into mydoc(name, content) values(@n, @c)";
+                            cmd.Parameters.AddWithValue("n", fn);
+                            cmd.Parameters.AddWithValue("c", bytes);
+
+                            cmd.ExecuteNonQuery();
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"上传文件出错：{ex.Message}");
+                    return;
+                }
+            }
+
+            MessageBox.Show($"文件 {ofd.FileName} 上传成功！");
+            RefreshFileList();
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            RefreshFileList();
+        }
+
+        private void btnRm_Click(object sender, EventArgs e)
+        {
+            if (dgvFiles.SelectedRows.Count == 0)
+                return;
+
+            var row = dgvFiles.SelectedRows[0].Index;
+            var fn = dgvFiles.Rows[row].Cells[0].Value.ToString();
+
+            if (MessageBox.Show($"确定删除文件 {fn} 吗？", "删除共享文件", MessageBoxButtons.OKCancel) != DialogResult.OK)
+                return;
+
+            try
+            {
+                using (var conn = ConnectionHelper.Instance.Connect())
+                {
+                    conn.Open();
+
+                    using (var cmd = new NpgsqlCommand())
+                    {
+                        cmd.Connection = conn;
+                        cmd.CommandText = "delete from mydoc where name=@n";
+
+                        cmd.Parameters.AddWithValue("n", fn);
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"删除文件出错：{ex.Message}");
+                return;
+            }
+
+            RefreshFileList();
+        }
+
+        private void btnDownload_Click(object sender, EventArgs e)
+        {
+            if (dgvFiles.SelectedRows.Count == 0)
+                return;
+
+            var index = dgvFiles.SelectedRows[0].Index;
+            var fn = dgvFiles.Rows[index].Cells[0].Value.ToString();
+
+            var sfd = new SaveFileDialog();
+            sfd.FileName = fn;
+            if (sfd.ShowDialog() != DialogResult.OK)
+                return;
+
+            byte[] bytes;
+            try
+            {
+                using (var conn = ConnectionHelper.Instance.Connect())
+                {
+                    conn.Open();
+
+                    using (var cmd = new NpgsqlCommand())
+                    {
+                        cmd.Connection = conn;
+                        cmd.CommandText = "select content from mydoc where name=@n";
+                        cmd.Parameters.AddWithValue("n", fn);
+
+                        using (var reader = cmd.ExecuteReader())
+                        {
+                            reader.Read();
+                            bytes = (byte[])reader[0];
+                        }
+                    }
+                }
+
+                using (var fs = new FileStream(sfd.FileName, FileMode.Create))
+                {
+                    using (var writer = new BinaryWriter(fs))
+                    {
+                        writer.Write(bytes);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"下载文件出错: {ex.Message}");
+                return;
+            }
+        }
+
+        private void dgvFiles_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var fn = dgvFiles.Rows[e.RowIndex].Cells[0].Value.ToString();
+
+            byte[] bytes;
+            try
+            {
+                using (var conn = ConnectionHelper.Instance.Connect())
+                {
+                    conn.Open();
+
+                    using (var cmd = new NpgsqlCommand())
+                    {
+                        cmd.Connection = conn;
+                        cmd.CommandText = "select content from mydoc where name=@n";
+                        cmd.Parameters.AddWithValue("n", fn);
+
+                        using (var reader = cmd.ExecuteReader())
+                        {
+                            reader.Read();
+                            bytes = (byte[])reader[0];
+                        }
+                    }
+                }
+
+                var fullPath = Path.GetTempPath() + Path.DirectorySeparatorChar + fn;
+                if (File.Exists(fullPath))
+                    File.Delete(fullPath);
+                using (var fs = new FileStream(fullPath, FileMode.Create))
+                {
+                    using (var writer = new BinaryWriter(fs))
+                    {
+                        writer.Write(bytes);
+                    }
+                }
+
+                var process = new Process();
+                process.StartInfo.FileName = fullPath;
+                process.StartInfo.Verb = "Open";
+                process.StartInfo.CreateNoWindow = true;
+                process.Start();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"下载文件出错: {ex.Message}");
+                return;
+            }
         }
     }
 }
