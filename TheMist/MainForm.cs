@@ -679,5 +679,61 @@ namespace TheMist
                 MessageBox.Show($"用户 {user} 的密码已经修改！", "操作成功");
             }
         }
+
+        private void MainForm_SizeChanged(object sender, EventArgs e)
+        {
+            // 重设 Tab Control 尺寸
+            tabControl1.Width = Width - tabControl1.Left - 30;
+            tabControl1.Height = Height - tabControl1.Top - 80;
+
+            // 录入画面
+            cbxItem1.Width = cbxItem2.Width = Width - cbxItem1.Left - 80;
+            gbxItem3.Width = Width - gbxItem3.Left - 80;
+            tbxItem3.Width = tbxItem3_2.Width = tbxItem3_3.Width = gbxItem3.Width - tbxItem3.Left - 20;
+
+            var totalHeight = Height - gbxItem3.Top - 160;
+            gbxItem3.Height = totalHeight;
+            var height = (totalHeight - 100) / 3;
+            tbxItem3.Height = tbxItem3_2.Height = tbxItem3_3.Height = height;
+            tbxItem3_2.Top = tbxItem3.Top + tbxItem3.Height + 20;
+            tbxItem3_3.Top = tbxItem3_2.Top + tbxItem3_2.Height + 20;
+
+            btnSave.Top = gbxItem3.Top + gbxItem3.Height + 5;
+            btnSave.Left = gbxItem3.Left + gbxItem3.Width - btnSave.Width;
+
+            // 查询画面
+            btnQuery.Left = tabControl1.Left + tabControl1.Width - btnQuery.Width - 40;
+
+            cbxQueryItem1.Width = btnQuery.Left - cbxQueryItem1.Left- 20;
+            label7.Left = btnQuery.Left;
+            cbxLimit.Left = label7.Left + label7.Width + 30;
+
+            dgvQueryResults.Width = btnQuery.Left + btnQuery.Width - dgvQueryResults.Left;
+            dgvQueryResults.Height = Height - (btnQuery.Top + btnQuery.Height) - 180;
+
+            button1.Top = dgvQueryResults.Top + dgvQueryResults.Height + 5;
+            btnExport.Top = button1.Top;
+            btnExport.Left = dgvQueryResults.Left + dgvQueryResults.Width - btnExport.Width;
+
+            // 系统设定
+            groupBox1.Width = Width - groupBox1.Left - 80;
+            groupBox1.Height = Height - groupBox1.Top - 160;
+
+            tbxSysName.Width = groupBox1.Left + groupBox1.Width - tbxSysName.Left;
+
+            btnEditOpt1.Left = btnEditOpt2.Left = groupBox1.Left + groupBox1.Width - btnEditOpt1.Width - 40;
+            tbxItem1Title.Width = tbxItem2Title.Width = tbxItem3Title.Width = btnEditOpt1.Left - tbxItem1Title.Left - 20;
+
+            btnEditSys.Top = groupBox1.Top + groupBox1.Height + 5;
+            btnEditSys.Left = groupBox1.Left + groupBox1.Width - btnEditSys.Width;
+
+            // 用户管理
+            dgvUsers.Width = Width - dgvUsers.Left - 60;
+            dgvUsers.Height = Height - dgvUsers.Top - 160;
+
+            btnNewUser.Top = dgvUsers.Top + dgvUsers.Height + 5;
+            button5.Top = btnNewUser.Top;
+            button5.Left = dgvUsers.Left + dgvUsers.Width - button5.Width;
+        }
     }
 }

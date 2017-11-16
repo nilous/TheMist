@@ -89,7 +89,7 @@
             this.btnLogin.Location = new System.Drawing.Point(507, 124);
             this.btnLogin.Margin = new System.Windows.Forms.Padding(2);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(101, 42);
+            this.btnLogin.Size = new System.Drawing.Size(101, 32);
             this.btnLogin.TabIndex = 4;
             this.btnLogin.Text = "登录";
             this.btnLogin.UseVisualStyleBackColor = true;
@@ -100,7 +100,7 @@
             this.btnSettings.Location = new System.Drawing.Point(387, 124);
             this.btnSettings.Margin = new System.Windows.Forms.Padding(2);
             this.btnSettings.Name = "btnSettings";
-            this.btnSettings.Size = new System.Drawing.Size(101, 42);
+            this.btnSettings.Size = new System.Drawing.Size(101, 32);
             this.btnSettings.TabIndex = 5;
             this.btnSettings.Text = "设置";
             this.btnSettings.UseVisualStyleBackColor = true;

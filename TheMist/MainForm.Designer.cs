@@ -30,6 +30,10 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.gbxItem3 = new System.Windows.Forms.GroupBox();
+            this.tbxItem3_3 = new System.Windows.Forms.TextBox();
+            this.tbxItem3_2 = new System.Windows.Forms.TextBox();
+            this.tbxItem3 = new System.Windows.Forms.TextBox();
             this.btnSave = new System.Windows.Forms.Button();
             this.cbxItem2 = new System.Windows.Forms.ComboBox();
             this.cbxItem1 = new System.Windows.Forms.ComboBox();
@@ -42,6 +46,14 @@
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnExport = new System.Windows.Forms.Button();
             this.dgvQueryResults = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnQuery = new System.Windows.Forms.Button();
             this.cbxQueryItem1 = new System.Windows.Forms.ComboBox();
             this.lblQueryItem1 = new System.Windows.Forms.Label();
@@ -72,20 +84,9 @@
             this.Column8 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.gbxItem3 = new System.Windows.Forms.GroupBox();
-            this.tbxItem3 = new System.Windows.Forms.TextBox();
-            this.tbxItem3_2 = new System.Windows.Forms.TextBox();
-            this.tbxItem3_3 = new System.Windows.Forms.TextBox();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.gbxItem3.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvQueryResults)).BeginInit();
             this.tpSys.SuspendLayout();
@@ -93,7 +94,6 @@
             this.tpUser.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsers)).BeginInit();
             this.statusStrip1.SuspendLayout();
-            this.gbxItem3.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -125,11 +125,47 @@
             this.tabPage1.Text = "数据录入";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // gbxItem3
+            // 
+            this.gbxItem3.Controls.Add(this.tbxItem3_3);
+            this.gbxItem3.Controls.Add(this.tbxItem3_2);
+            this.gbxItem3.Controls.Add(this.tbxItem3);
+            this.gbxItem3.Location = new System.Drawing.Point(39, 146);
+            this.gbxItem3.Name = "gbxItem3";
+            this.gbxItem3.Size = new System.Drawing.Size(783, 273);
+            this.gbxItem3.TabIndex = 13;
+            this.gbxItem3.TabStop = false;
+            this.gbxItem3.Text = "数据项3";
+            // 
+            // tbxItem3_3
+            // 
+            this.tbxItem3_3.Location = new System.Drawing.Point(18, 189);
+            this.tbxItem3_3.Multiline = true;
+            this.tbxItem3_3.Name = "tbxItem3_3";
+            this.tbxItem3_3.Size = new System.Drawing.Size(746, 67);
+            this.tbxItem3_3.TabIndex = 2;
+            // 
+            // tbxItem3_2
+            // 
+            this.tbxItem3_2.Location = new System.Drawing.Point(17, 116);
+            this.tbxItem3_2.Multiline = true;
+            this.tbxItem3_2.Name = "tbxItem3_2";
+            this.tbxItem3_2.Size = new System.Drawing.Size(746, 67);
+            this.tbxItem3_2.TabIndex = 1;
+            // 
+            // tbxItem3
+            // 
+            this.tbxItem3.Location = new System.Drawing.Point(17, 43);
+            this.tbxItem3.Multiline = true;
+            this.tbxItem3.Name = "tbxItem3";
+            this.tbxItem3.Size = new System.Drawing.Size(746, 67);
+            this.tbxItem3.TabIndex = 0;
+            // 
             // btnSave
             // 
             this.btnSave.Location = new System.Drawing.Point(705, 425);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(117, 42);
+            this.btnSave.Size = new System.Drawing.Size(117, 32);
             this.btnSave.TabIndex = 12;
             this.btnSave.Text = "录入";
             this.btnSave.UseVisualStyleBackColor = true;
@@ -196,10 +232,10 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(22, 424);
+            this.button1.Location = new System.Drawing.Point(22, 434);
             this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(136, 42);
+            this.button1.Size = new System.Drawing.Size(136, 32);
             this.button1.TabIndex = 12;
             this.button1.Text = "删除选中项";
             this.button1.UseVisualStyleBackColor = true;
@@ -232,10 +268,10 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(170, 424);
+            this.btnDelete.Location = new System.Drawing.Point(166, 434);
             this.btnDelete.Margin = new System.Windows.Forms.Padding(4);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(136, 42);
+            this.btnDelete.Size = new System.Drawing.Size(136, 32);
             this.btnDelete.TabIndex = 9;
             this.btnDelete.Text = "批量删除";
             this.btnDelete.UseVisualStyleBackColor = true;
@@ -243,10 +279,10 @@
             // 
             // btnExport
             // 
-            this.btnExport.Location = new System.Drawing.Point(690, 424);
+            this.btnExport.Location = new System.Drawing.Point(690, 434);
             this.btnExport.Margin = new System.Windows.Forms.Padding(4);
             this.btnExport.Name = "btnExport";
-            this.btnExport.Size = new System.Drawing.Size(136, 42);
+            this.btnExport.Size = new System.Drawing.Size(136, 32);
             this.btnExport.TabIndex = 8;
             this.btnExport.Text = "导出CSV";
             this.btnExport.UseVisualStyleBackColor = true;
@@ -266,21 +302,61 @@
             this.Column11,
             this.Column12});
             this.dgvQueryResults.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgvQueryResults.Location = new System.Drawing.Point(22, 135);
+            this.dgvQueryResults.Location = new System.Drawing.Point(22, 115);
             this.dgvQueryResults.Margin = new System.Windows.Forms.Padding(4);
             this.dgvQueryResults.Name = "dgvQueryResults";
             this.dgvQueryResults.RowHeadersVisible = false;
             this.dgvQueryResults.RowTemplate.Height = 30;
             this.dgvQueryResults.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvQueryResults.Size = new System.Drawing.Size(804, 281);
+            this.dgvQueryResults.Size = new System.Drawing.Size(804, 311);
             this.dgvQueryResults.TabIndex = 7;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "ID";
+            this.Column1.Name = "Column1";
+            // 
+            // Column9
+            // 
+            this.Column9.HeaderText = "用户";
+            this.Column9.Name = "Column9";
+            // 
+            // Column10
+            // 
+            this.Column10.HeaderText = "录入时间";
+            this.Column10.Name = "Column10";
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "数据项1";
+            this.Column2.Name = "Column2";
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "数据项2";
+            this.Column3.Name = "Column3";
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "数据项3";
+            this.Column4.Name = "Column4";
+            // 
+            // Column11
+            // 
+            this.Column11.HeaderText = "数据项3_2";
+            this.Column11.Name = "Column11";
+            // 
+            // Column12
+            // 
+            this.Column12.HeaderText = "数据项3_3";
+            this.Column12.Name = "Column12";
             // 
             // btnQuery
             // 
-            this.btnQuery.Location = new System.Drawing.Point(690, 75);
+            this.btnQuery.Location = new System.Drawing.Point(578, 67);
             this.btnQuery.Margin = new System.Windows.Forms.Padding(4);
             this.btnQuery.Name = "btnQuery";
-            this.btnQuery.Size = new System.Drawing.Size(136, 42);
+            this.btnQuery.Size = new System.Drawing.Size(248, 32);
             this.btnQuery.TabIndex = 6;
             this.btnQuery.Text = "查询";
             this.btnQuery.UseVisualStyleBackColor = true;
@@ -290,7 +366,7 @@
             // 
             this.cbxQueryItem1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxQueryItem1.FormattingEnabled = true;
-            this.cbxQueryItem1.Location = new System.Drawing.Point(111, 84);
+            this.cbxQueryItem1.Location = new System.Drawing.Point(111, 71);
             this.cbxQueryItem1.Margin = new System.Windows.Forms.Padding(4);
             this.cbxQueryItem1.Name = "cbxQueryItem1";
             this.cbxQueryItem1.Size = new System.Drawing.Size(403, 26);
@@ -299,7 +375,7 @@
             // lblQueryItem1
             // 
             this.lblQueryItem1.AutoSize = true;
-            this.lblQueryItem1.Location = new System.Drawing.Point(18, 87);
+            this.lblQueryItem1.Location = new System.Drawing.Point(18, 74);
             this.lblQueryItem1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblQueryItem1.Name = "lblQueryItem1";
             this.lblQueryItem1.Size = new System.Drawing.Size(76, 19);
@@ -359,7 +435,7 @@
             // 
             this.btnEditSys.Location = new System.Drawing.Point(709, 407);
             this.btnEditSys.Name = "btnEditSys";
-            this.btnEditSys.Size = new System.Drawing.Size(117, 42);
+            this.btnEditSys.Size = new System.Drawing.Size(117, 32);
             this.btnEditSys.TabIndex = 4;
             this.btnEditSys.Text = "保存修改";
             this.btnEditSys.UseVisualStyleBackColor = true;
@@ -375,18 +451,18 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.tbxItem1Title);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(31, 110);
+            this.groupBox1.Location = new System.Drawing.Point(31, 81);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(795, 243);
+            this.groupBox1.Size = new System.Drawing.Size(795, 272);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "数据项设定";
             // 
             // btnEditOpt2
             // 
-            this.btnEditOpt2.Location = new System.Drawing.Point(672, 101);
+            this.btnEditOpt2.Location = new System.Drawing.Point(672, 106);
             this.btnEditOpt2.Name = "btnEditOpt2";
-            this.btnEditOpt2.Size = new System.Drawing.Size(117, 42);
+            this.btnEditOpt2.Size = new System.Drawing.Size(117, 32);
             this.btnEditOpt2.TabIndex = 7;
             this.btnEditOpt2.Text = "编辑选项";
             this.btnEditOpt2.UseVisualStyleBackColor = true;
@@ -394,9 +470,9 @@
             // 
             // btnEditOpt1
             // 
-            this.btnEditOpt1.Location = new System.Drawing.Point(672, 41);
+            this.btnEditOpt1.Location = new System.Drawing.Point(672, 46);
             this.btnEditOpt1.Name = "btnEditOpt1";
-            this.btnEditOpt1.Size = new System.Drawing.Size(117, 42);
+            this.btnEditOpt1.Size = new System.Drawing.Size(117, 32);
             this.btnEditOpt1.TabIndex = 6;
             this.btnEditOpt1.Text = "编辑选项";
             this.btnEditOpt1.UseVisualStyleBackColor = true;
@@ -404,10 +480,10 @@
             // 
             // tbxItem3Title
             // 
-            this.tbxItem3Title.Location = new System.Drawing.Point(175, 174);
+            this.tbxItem3Title.Location = new System.Drawing.Point(148, 174);
             this.tbxItem3Title.Margin = new System.Windows.Forms.Padding(4);
             this.tbxItem3Title.Name = "tbxItem3Title";
-            this.tbxItem3Title.Size = new System.Drawing.Size(467, 28);
+            this.tbxItem3Title.Size = new System.Drawing.Size(494, 28);
             this.tbxItem3Title.TabIndex = 5;
             // 
             // label3
@@ -422,10 +498,10 @@
             // 
             // tbxItem2Title
             // 
-            this.tbxItem2Title.Location = new System.Drawing.Point(175, 110);
+            this.tbxItem2Title.Location = new System.Drawing.Point(148, 110);
             this.tbxItem2Title.Margin = new System.Windows.Forms.Padding(4);
             this.tbxItem2Title.Name = "tbxItem2Title";
-            this.tbxItem2Title.Size = new System.Drawing.Size(467, 28);
+            this.tbxItem2Title.Size = new System.Drawing.Size(494, 28);
             this.tbxItem2Title.TabIndex = 3;
             // 
             // label2
@@ -440,10 +516,10 @@
             // 
             // tbxItem1Title
             // 
-            this.tbxItem1Title.Location = new System.Drawing.Point(175, 50);
+            this.tbxItem1Title.Location = new System.Drawing.Point(148, 50);
             this.tbxItem1Title.Margin = new System.Windows.Forms.Padding(4);
             this.tbxItem1Title.Name = "tbxItem1Title";
-            this.tbxItem1Title.Size = new System.Drawing.Size(467, 28);
+            this.tbxItem1Title.Size = new System.Drawing.Size(494, 28);
             this.tbxItem1Title.TabIndex = 1;
             // 
             // label1
@@ -488,7 +564,7 @@
             // 
             this.button5.Location = new System.Drawing.Point(565, 414);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(269, 42);
+            this.button5.Size = new System.Drawing.Size(269, 32);
             this.button5.TabIndex = 10;
             this.button5.Text = "更改选中用户密码";
             this.button5.UseVisualStyleBackColor = true;
@@ -498,7 +574,7 @@
             // 
             this.btnNewUser.Location = new System.Drawing.Point(17, 414);
             this.btnNewUser.Name = "btnNewUser";
-            this.btnNewUser.Size = new System.Drawing.Size(117, 42);
+            this.btnNewUser.Size = new System.Drawing.Size(117, 32);
             this.btnNewUser.TabIndex = 7;
             this.btnNewUser.Text = "新增用户";
             this.btnNewUser.UseVisualStyleBackColor = true;
@@ -565,82 +641,6 @@
             this.toolStripStatusLabel1.Size = new System.Drawing.Size(219, 19);
             this.toolStripStatusLabel1.Text = "toolStripStatusLabel1";
             // 
-            // gbxItem3
-            // 
-            this.gbxItem3.Controls.Add(this.tbxItem3_3);
-            this.gbxItem3.Controls.Add(this.tbxItem3_2);
-            this.gbxItem3.Controls.Add(this.tbxItem3);
-            this.gbxItem3.Location = new System.Drawing.Point(39, 146);
-            this.gbxItem3.Name = "gbxItem3";
-            this.gbxItem3.Size = new System.Drawing.Size(783, 273);
-            this.gbxItem3.TabIndex = 13;
-            this.gbxItem3.TabStop = false;
-            this.gbxItem3.Text = "数据项3";
-            // 
-            // tbxItem3
-            // 
-            this.tbxItem3.Location = new System.Drawing.Point(17, 43);
-            this.tbxItem3.Multiline = true;
-            this.tbxItem3.Name = "tbxItem3";
-            this.tbxItem3.Size = new System.Drawing.Size(746, 67);
-            this.tbxItem3.TabIndex = 0;
-            // 
-            // tbxItem3_2
-            // 
-            this.tbxItem3_2.Location = new System.Drawing.Point(17, 116);
-            this.tbxItem3_2.Multiline = true;
-            this.tbxItem3_2.Name = "tbxItem3_2";
-            this.tbxItem3_2.Size = new System.Drawing.Size(746, 67);
-            this.tbxItem3_2.TabIndex = 1;
-            // 
-            // tbxItem3_3
-            // 
-            this.tbxItem3_3.Location = new System.Drawing.Point(18, 189);
-            this.tbxItem3_3.Multiline = true;
-            this.tbxItem3_3.Name = "tbxItem3_3";
-            this.tbxItem3_3.Size = new System.Drawing.Size(746, 67);
-            this.tbxItem3_3.TabIndex = 2;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "ID";
-            this.Column1.Name = "Column1";
-            // 
-            // Column9
-            // 
-            this.Column9.HeaderText = "用户";
-            this.Column9.Name = "Column9";
-            // 
-            // Column10
-            // 
-            this.Column10.HeaderText = "录入时间";
-            this.Column10.Name = "Column10";
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "数据项1";
-            this.Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "数据项2";
-            this.Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "数据项3";
-            this.Column4.Name = "Column4";
-            // 
-            // Column11
-            // 
-            this.Column11.HeaderText = "数据项3_2";
-            this.Column11.Name = "Column11";
-            // 
-            // Column12
-            // 
-            this.Column12.HeaderText = "数据项3_3";
-            this.Column12.Name = "Column12";
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -649,14 +649,17 @@
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.tabControl1);
             this.Font = new System.Drawing.Font("宋体", 11F);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MinimumSize = new System.Drawing.Size(900, 600);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.SizeChanged += new System.EventHandler(this.MainForm_SizeChanged);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            this.gbxItem3.ResumeLayout(false);
+            this.gbxItem3.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvQueryResults)).EndInit();
@@ -668,8 +671,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsers)).EndInit();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
-            this.gbxItem3.ResumeLayout(false);
-            this.gbxItem3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

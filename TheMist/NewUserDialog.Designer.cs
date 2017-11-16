@@ -43,53 +43,53 @@
             this.label1.Location = new System.Drawing.Point(41, 39);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(76, 22);
+            this.label1.Size = new System.Drawing.Size(66, 19);
             this.label1.TabIndex = 0;
             this.label1.Text = "用户名";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(41, 122);
+            this.label2.Location = new System.Drawing.Point(41, 87);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(54, 22);
+            this.label2.Size = new System.Drawing.Size(47, 19);
             this.label2.TabIndex = 1;
             this.label2.Text = "密码";
             // 
             // tbxLogin
             // 
-            this.tbxLogin.Location = new System.Drawing.Point(163, 36);
+            this.tbxLogin.Location = new System.Drawing.Point(142, 36);
             this.tbxLogin.Margin = new System.Windows.Forms.Padding(4);
             this.tbxLogin.Name = "tbxLogin";
-            this.tbxLogin.Size = new System.Drawing.Size(630, 33);
+            this.tbxLogin.Size = new System.Drawing.Size(492, 28);
             this.tbxLogin.TabIndex = 2;
             // 
             // tbxPassword
             // 
-            this.tbxPassword.Location = new System.Drawing.Point(163, 111);
+            this.tbxPassword.Location = new System.Drawing.Point(142, 84);
             this.tbxPassword.Margin = new System.Windows.Forms.Padding(4);
             this.tbxPassword.Name = "tbxPassword";
-            this.tbxPassword.Size = new System.Drawing.Size(630, 33);
+            this.tbxPassword.Size = new System.Drawing.Size(492, 28);
             this.tbxPassword.TabIndex = 3;
             // 
             // cbxAdmin
             // 
             this.cbxAdmin.AutoSize = true;
-            this.cbxAdmin.Location = new System.Drawing.Point(163, 190);
+            this.cbxAdmin.Location = new System.Drawing.Point(142, 138);
             this.cbxAdmin.Margin = new System.Windows.Forms.Padding(4);
             this.cbxAdmin.Name = "cbxAdmin";
-            this.cbxAdmin.Size = new System.Drawing.Size(146, 26);
+            this.cbxAdmin.Size = new System.Drawing.Size(126, 23);
             this.cbxAdmin.TabIndex = 4;
             this.cbxAdmin.Text = "管理员权限";
             this.cbxAdmin.UseVisualStyleBackColor = true;
             // 
             // btnNewUser
             // 
-            this.btnNewUser.Location = new System.Drawing.Point(676, 177);
+            this.btnNewUser.Location = new System.Drawing.Point(517, 132);
             this.btnNewUser.Margin = new System.Windows.Forms.Padding(2);
             this.btnNewUser.Name = "btnNewUser";
-            this.btnNewUser.Size = new System.Drawing.Size(117, 50);
+            this.btnNewUser.Size = new System.Drawing.Size(117, 32);
             this.btnNewUser.TabIndex = 8;
             this.btnNewUser.Text = "创建用户";
             this.btnNewUser.UseVisualStyleBackColor = true;
@@ -97,10 +97,10 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(530, 177);
+            this.btnCancel.Location = new System.Drawing.Point(382, 132);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(117, 50);
+            this.btnCancel.Size = new System.Drawing.Size(117, 32);
             this.btnCancel.TabIndex = 9;
             this.btnCancel.Text = "取消";
             this.btnCancel.UseVisualStyleBackColor = true;
@@ -108,9 +108,9 @@
             // 
             // NewUserDialog
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(868, 274);
+            this.ClientSize = new System.Drawing.Size(691, 205);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnNewUser);
             this.Controls.Add(this.cbxAdmin);
