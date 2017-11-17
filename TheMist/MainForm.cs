@@ -23,6 +23,8 @@ namespace TheMist
         public string Item1 { get; set; }
         public string Item2 { get; set; }
         public string Item3 { get; set; }
+        public string Item4 { get; set; }
+        public string Item5 { get; set; }
         public List<string> Item1Opts = new List<string>();
         public List<string> Item2Opts = new List<string>();
 
@@ -89,6 +91,8 @@ namespace TheMist
                         Item1 = reader[1].ToString();
                         Item2 = reader[2].ToString();
                         Item3 = reader[3].ToString();
+                        Item4 = reader[4].ToString();
+                        Item5 = reader[5].ToString();
                     }
                 }
 
@@ -138,7 +142,11 @@ namespace TheMist
             lblItem2.AutoSize = true;
             //lblItem3.Text = Item3;
             //lblItem3.AutoSize = true;
-            gbxItem3.Text = Item3;
+            //gbxItem3.Text = Item3;
+            lblItem3.Text = Item3;
+            lblItem4.Text = Item4;
+            lblItem5.Text = Item5;
+
             lblQueryItem1.Text = Item1;
             lblQueryItem1.AutoSize = true;
 
@@ -162,8 +170,8 @@ namespace TheMist
             dgvQueryResults.Columns[3].HeaderText = Item1;
             dgvQueryResults.Columns[4].HeaderText = Item2;
             dgvQueryResults.Columns[5].HeaderText = Item3;
-            dgvQueryResults.Columns[6].HeaderText = $"{Item3}_2";
-            dgvQueryResults.Columns[7].HeaderText = $"{Item3}_3";
+            dgvQueryResults.Columns[6].HeaderText = Item4; // $"{Item3}_2";
+            dgvQueryResults.Columns[7].HeaderText = Item5; // $"{Item3}_3";
         }
 
 
@@ -257,6 +265,8 @@ namespace TheMist
             var item1 = tbxItem1Title.Text.Trim();
             var item2 = tbxItem2Title.Text.Trim();
             var item3 = tbxItem3Title.Text.Trim();
+            var item4 = tbxItem4Title.Text.Trim();
+            var item5 = tbxItem5Title.Text.Trim();
 
             if (string.IsNullOrEmpty(name) || string.IsNullOrEmpty(item1) 
                 || string.IsNullOrEmpty(item2) || string.IsNullOrEmpty(item3))
@@ -281,11 +291,13 @@ namespace TheMist
                     using (var cmd = new NpgsqlCommand())
                     {
                         cmd.Connection = conn;
-                        cmd.CommandText = "insert into mysys values(@n, @x, @y, @z)";
+                        cmd.CommandText = "insert into mysys values(@n, @x, @y, @z, @a, @b)";
                         cmd.Parameters.AddWithValue("n", name);
                         cmd.Parameters.AddWithValue("x", item1);
                         cmd.Parameters.AddWithValue("y", item2);
                         cmd.Parameters.AddWithValue("z", item3);
+                        cmd.Parameters.AddWithValue("a", item4);
+                        cmd.Parameters.AddWithValue("b", item5);
                         cmd.ExecuteNonQuery();
                     }
                 }
@@ -305,6 +317,8 @@ namespace TheMist
             Item1 = item1;
             Item2 = item2;
             Item3 = item3;
+            Item4 = item4;
+            Item5 = item5;
             UpdateSysInfo();
 
             MessageBox.Show("系统设置更新成功！", "操作成功");
@@ -319,6 +333,8 @@ namespace TheMist
                 tbxItem1Title.Text = Item1;
                 tbxItem2Title.Text = Item2;
                 tbxItem3Title.Text = Item3;
+                tbxItem4Title.Text = Item4;
+                tbxItem5Title.Text = Item5;
             }
             // 用户管理
             else if (tabControl1.SelectedIndex == 3)
@@ -538,7 +554,7 @@ namespace TheMist
             {
                 using (var fs = new FileStream(sfd.FileName, FileMode.Create))
                 {
-                    var title = $"id, 用户, 录入时间, {Item1}, {Item2}, {Item3}, {Item3}_2, {Item3}_3" + Environment.NewLine;
+                    var title = $"id, 用户, 录入时间, {Item1}, {Item2}, {Item3}, {Item4}, {Item5}" + Environment.NewLine;
 
                     using (var w = new BinaryWriter(fs))
                     {
@@ -695,6 +711,19 @@ namespace TheMist
 
             // 录入画面
             cbxItem1.Width = cbxItem2.Width = Width - cbxItem1.Left - 80;
+            tbxItem3.Width = tbxItem3_2.Width = tbxItem3_3.Width = cbxItem1.Width;
+
+            var totalHeight = Height - tbxItem3.Top - 160;
+            var height = (totalHeight - 40) / 3;
+
+            tbxItem3.Height = tbxItem3_2.Height = tbxItem3_3.Height = height;
+            lblItem4.Top = tbxItem3_2.Top = tbxItem3.Top + tbxItem3.Height + 10;
+            lblItem5.Top = tbxItem3_3.Top = tbxItem3_2.Top + tbxItem3_2.Height + 10;
+
+            btnSave.Top = tbxItem3_3.Top + tbxItem3_3.Height + 10;
+            btnSave.Left = tbxItem3.Left + tbxItem3.Width - btnSave.Width;
+
+            /*
             gbxItem3.Width = Width - gbxItem3.Left - 80;
             tbxItem3.Width = tbxItem3_2.Width = tbxItem3_3.Width = gbxItem3.Width - tbxItem3.Left - 20;
 
@@ -707,6 +736,7 @@ namespace TheMist
 
             btnSave.Top = gbxItem3.Top + gbxItem3.Height + 5;
             btnSave.Left = gbxItem3.Left + gbxItem3.Width - btnSave.Width;
+            */
 
             // 查询画面
             btnQuery.Left = tabControl1.Left + tabControl1.Width - btnQuery.Width - 40;
@@ -729,7 +759,7 @@ namespace TheMist
             tbxSysName.Width = groupBox1.Left + groupBox1.Width - tbxSysName.Left;
 
             btnEditOpt1.Left = btnEditOpt2.Left = groupBox1.Left + groupBox1.Width - btnEditOpt1.Width - 40;
-            tbxItem1Title.Width = tbxItem2Title.Width = tbxItem3Title.Width = btnEditOpt1.Left - tbxItem1Title.Left - 20;
+            tbxItem1Title.Width = tbxItem2Title.Width = tbxItem3Title.Width = tbxItem4Title.Width = tbxItem5Title.Width = btnEditOpt1.Left - tbxItem1Title.Left - 20;
 
             btnEditSys.Top = groupBox1.Top + groupBox1.Height + 5;
             btnEditSys.Left = groupBox1.Left + groupBox1.Width - btnEditSys.Width;
