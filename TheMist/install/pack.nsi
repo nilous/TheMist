@@ -64,7 +64,9 @@ Section "Dummy Section" SecDummy
   File "TheMist.exe.config"
 
   SetDetailsPrint none
-  Rename "$INSTDIR\db.dat" "$LOCALAPPDATA\TheMist\db.dat"
+  CreateDirectory  $LOCALAPPDATA\TheMist
+  Delete $LOCALAPPDATA\TheMist\db.dat
+  Rename $INSTDIR\db.dat $LOCALAPPDATA\TheMist\db.dat
   SetDetailsPrint both
 
   CreateShortCut "$DESKTOP\¹úÄÚÊÕ¸¶.lnk" "$INSTDIR\TheMist.exe"
