@@ -871,9 +871,11 @@ namespace TheMist
 
             var index = dgvFiles.SelectedRows[0].Index;
             var fn = dgvFiles.Rows[index].Cells[0].Value.ToString();
+            var ext = Path.GetExtension(fn);
 
             var sfd = new SaveFileDialog();
             sfd.FileName = fn;
+            sfd.Filter = $"(*{ext})|{ext}";
             if (sfd.ShowDialog() != DialogResult.OK)
                 return;
 
@@ -957,7 +959,7 @@ namespace TheMist
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"下载文件出错: {ex.Message}");
+                MessageBox.Show($"打开文件出错: {ex.Message}");
                 return;
             }
         }
