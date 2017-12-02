@@ -571,11 +571,12 @@ namespace TheMist
                             var contents = content.Split(spliter, StringSplitOptions.None).ToList();
                             var r = string.Join(" ", contents);
                             */
-                            var i3 = CellValueToString(row.Cells[5].Value.ToString());
-                            var i3_2 = CellValueToString(row.Cells[6].Value.ToString());
-                            var i3_3 = CellValueToString(row.Cells[7].Value.ToString());
+                            var i3 = CellValueToString(row.Cells[5].Value.ToString()).Replace(',', '，');
+                            var i3_2 = CellValueToString(row.Cells[6].Value.ToString()).Replace(',', '，');
+                            var i3_3 = CellValueToString(row.Cells[7].Value.ToString()).Replace(',', '，');
 
                             var s = $"{row.Cells[0].Value}, {row.Cells[1].Value}, {row.Cells[2].Value}, {row.Cells[3].Value}, {row.Cells[4].Value}, {i3}, {i3_2}, {i3_3}" + Environment.NewLine;
+                            //s = s.Replace(',', '，');
 
                             bytes = Encoding.GetEncoding("GBK").GetBytes(s);
                             w.Write(bytes, 0, bytes.Length);
