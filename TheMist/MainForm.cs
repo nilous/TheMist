@@ -475,7 +475,8 @@ namespace TheMist
                                 dgvQueryResults.Rows[index].Cells[4].Value = reader[2].ToString();
                                 dgvQueryResults.Rows[index].Cells[5].Value = reader[3].ToString();
                                 dgvQueryResults.Rows[index].Cells[1].Value = reader[4].ToString();
-                                dgvQueryResults.Rows[index].Cells[2].Value = reader[5].ToString();
+                                dgvQueryResults.Rows[index].Cells[2].Value =
+                                    DateTime.Parse(reader[5].ToString()).ToString("yyyy/MM/dd HH:mm:ss"); //reader[5].ToString();
                                 dgvQueryResults.Rows[index].Cells[6].Value = reader[6].ToString();
                                 dgvQueryResults.Rows[index].Cells[7].Value = reader[7].ToString();
                             }
